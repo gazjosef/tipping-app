@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
-class Table extends Component {
+class Comp extends Component {
   render() {
     return (
-      <div className="Table">
+      <div className="Comp">
 
 
         { /* Breadcrumb */ }
@@ -12,7 +12,7 @@ class Table extends Component {
           <div className="container text-left">
             <ol className="breadcrumb">
               <li><Link to="/">Dashboard</Link></li>
-              <li className="active">Table</li>
+              <li className="active">Comp</li>
             </ol>
           </div>
         </section>
@@ -117,11 +117,11 @@ class Table extends Component {
               <div className="col-md-9">
                 
           
-                { /* League Table */ }
+                { /* Comp Table */ }
                 <div className="panel panel-default">
 
                   <div className="panel-heading main-color-bg">
-                    <h3 className="panel-title">League Table</h3>
+                    <h3 className="panel-title">Comp Table</h3>
                   </div>
 
                   <div className="panel-body">
@@ -134,45 +134,45 @@ class Table extends Component {
                             <th>P</th>
                             <th>First</th>
                             <th>Last</th>
-                            <th>Team Name</th>
-                            <th>Fav Team</th>
+                            <th>Email</th>
+                            <th>Paid?</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th>1</th>
                             <td>Tom</td>
-                            <td>Parsons</td>
-                            <td>Tom's Sea Eagles</td>
-                            <td>Manly</td>
+                            <td>Parson</td>
+                            <td>tom.parson@nielsen.com</td>
+                            <td><span className="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                           </tr>
                           <tr>
                             <th>2</th>
                             <td>Kain</td>
                             <td>Owen</td>
-                            <td>Kain's Knights</td>
-                            <td>Newcastle</td>
+                            <td>kain.owen@nielsen.com</td>
+                            <td><span className="glyphicon glyphicon-remove" aria-hidden="remove"></span></td>
                           </tr>
                           <tr>
                             <th>3</th>
                             <td>Sam</td>
-                            <td>Riley</td>
-                            <td>Sammy's Jets</td>
-                            <td>No Team</td>
+                            <td>Turner</td>
+                            <td>sam.turner@nielsen.com</td>
+                            <td><span className="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                           </tr>
                           <tr>
                             <th>4</th>
                             <td>Chris</td>
                             <td>Riley</td>
-                            <td>Chris FC</td>
-                            <td>Manly</td>
+                            <td>chris.riley@nielsen.com</td>
+                            <td><span className="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                           </tr>
                           <tr>
                             <th>5</th>
                             <td>Matt</td>
                             <td>Whiteford</td>
-                            <td>Matt's Panthers</td>
-                            <td>Penrith</td>
+                            <td>matt.whiteford@nielsen.com</td>
+                            <td><span className="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -191,4 +191,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default Comp;

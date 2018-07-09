@@ -9,29 +9,29 @@ class Tips extends Component {
 
         { /* Breadcrumb */ }
         <section id="breadcrumb">
-          <div class="container text-left">
-            <ol class="breadcrumb">
+          <div className="container text-left">
+            <ol className="breadcrumb">
               <li><Link to="/">Dashboard</Link></li>
-              <li class="active">Tips</li>
+              <li className="active">Tips</li>
             </ol>
           </div>
         </section>
 
         { /* Main Section */ }
         <section id="main">
-          <div class="container">
-            <div class="row">
+          <div className="container">
+            <div className="row">
               
               
-              <div class="col-md-3">
+              <div className="col-md-3">
 
-                <div class="panel panel-default">
-                  <div class="panel-heading main-color-bg">
-                    <h3 class="panel-title">League Table</h3>
+                <div className="panel panel-default">
+                  <div className="panel-heading main-color-bg">
+                    <h3 className="panel-title">League Table</h3>
                   </div>
 
                   { /* League Table */  }
-                  <table class="table table-striped">
+                  <table className="table table-striped">
                     <thead>
                       <tr>
                         <th scope="col">P</th>
@@ -114,61 +114,107 @@ class Tips extends Component {
               </div>
               
               { /* Main Section */ }
-              <div class="col-md-9">
+              <div className="col-md-9">
                 
                 { /* Week One Tips */ }
-                <div class="panel panel-default">
+                <div className="panel panel-default">
 
-                  <div class="panel-heading main-color-bg">
-                    <h3 class="panel-title">Week One Tips</h3>
+                  <div className="panel-heading main-color-bg">
+                    <h3 className="panel-title">Week One Tips</h3>
                   </div>
 
-                  <div class="panel-body">
+                  <div className="panel-body">
 
                     { /* Tipping Container */ }
-                    <div class="tipping-container">
+                    <div className="tipping-container">
+
+                      { /* Select Round Form */ }
+                      <div className="form-group">
+
+                        { /* Select Label */ }
+                        <div className="select-round-label text-right">
+                          <label>Select Round: </label>
+                        </div>
+                        { /* Drop-Down Menu*/ }
+                        <div className="select-form-control">                          
+                          <select className="form-control">
+                            <option value="round 1">Round 1</option>
+                            <option value="round 2">Round 2</option>
+                            <option value="round 3">Round 3</option>
+                            <option value="round 4">Round 4</option>
+                            <option value="round 5">Round 5</option>
+                            <option value="round 6">Round 6</option>
+                            <option value="round 7">Round 7</option>
+                            <option value="round 8">Round 8</option>
+                            <option value="round 9">Round 9</option>
+                            <option value="round 10">Round 10</option>
+                            <option value="round 11">Round 11</option>
+                            <option value="round 11">Round 11</option>
+                            <option value="round 12">Round 12</option>
+                            <option value="round 13">Round 13</option>
+                            <option value="round 14">Round 14</option>
+                            <option value="round 15">Round 15</option>
+                            <option value="round 16">Round 16</option>
+                            <option value="round 17">Round 17</option>
+                            <option value="round 18">Round 18</option>
+                            <option value="round 19">Round 19</option>
+                            <option value="round 20">Round 20</option>
+                            <option value="round 21">Round 21</option>
+                            <option value="round 22">Round 22</option>
+                            <option value="round 23">Round 23</option>
+                            <option value="round 24">Round 24</option>
+                            <option value="round 25">Round 25</option>
+                            <option value="round 26">Round 26</option>
+                            <option value="finals week 1">Finals Week 1</option>
+                            <option value="finals week 2">Finals Week 2</option>
+                            <option value="finals week 3">Finals Week 3</option>
+                            <option value="grand final">Grand Final</option>
+                          </select>
+                        </div>
+                                  
+                      </div>                      
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -177,46 +223,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -225,46 +271,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -273,46 +319,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -321,46 +367,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -369,46 +415,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -417,46 +463,46 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
@@ -465,54 +511,59 @@ class Tips extends Component {
                       </div>
 
                       { /* Tipping Row */ }
-                      <div class="tipping-row">
+                      <div className="tipping-row">
 
-                        <div class="squad home-squad">
-                          <div class="radio home-radio">
+                        <div className="squad home-squad">
+                          <div className="radio home-radio">
                             
                           </div>                  
-                          <div class="home-name">
+                          <div className="home-name">
                             Dragons
                           </div>
-                          <div class="home-logo">
+                          <div className="home-logo">
                             
                           </div>
-                          <div class="home-score">
+                          <div className="home-score">
                             20
                           </div>
                         </div>
 
-                        <div class="game-details text-center">
-                          <div class="game-date">
+                        <div className="game-details text-center">
+                          <div className="game-date">
                             Thurs 28th June
                           </div>
-                          <div class="game-time">
+                          <div className="game-time">
                             7:50PM
                           </div>
-                          <div class="game-venue">
+                          <div className="game-venue">
                             WIN Stadium
                           </div>
                         </div>
 
-                        <div class="squad away-squad text-right">
-                          <div class="away-score">
+                        <div className="squad away-squad text-right">
+                          <div className="away-score">
                             18
                           </div>
-                          <div class="away-logo">
+                          <div className="away-logo">
 
                           </div>
-                          <div class="away-name">
+                          <div className="away-name">
                             Eels
                           </div>
-                          <div class="radio away-radio">
+                          <div className="radio away-radio">
 
                           </div>
 
                         </div>
 
-                      </div>                                            
-                     
-                    </div>
+                      </div>{ /* End of Tipping Row */ }
+
+                      { /* Submit Button */ }
+                      <div className="submit-button text-right">
+                        <button type="submit" className="btn btn-default">Submit</button>                                           
+                      </div>
+
+                    </div>{ /* End of Tipping Container */ }
                   </div>
                 </div>
               </div>

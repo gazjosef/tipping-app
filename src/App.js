@@ -4,7 +4,7 @@ import './App.css';
 import Home from './components/home';
 import { Link } from 'react-router-dom';
 
-class App extends Component {
+class App extends Component { 
   // componentDidMount()
   // {
   //   this.loadTeams();

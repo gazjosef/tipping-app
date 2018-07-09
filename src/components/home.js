@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Dashboard from './dashboard';
 import Tips from './tips';
 import Table from './table';
+import Comp from './comp';
+import Settings from './settings';
+import Login from './login';
 import { Link, Switch, Route } from 'react-router-dom'
 
 
@@ -25,14 +28,14 @@ class Home extends Component {
             </div>
             <div id="navbar" className="collapse navbar-collapse">
               <ul className="nav navbar-nav">
-                <li className="active"><Link to="/tips">Tips</Link></li>
+                <li><Link to="/tips">Tips</Link></li>
                 <li><Link to="/table">Table</Link></li>
                 <li><Link to="/comp">Comp</Link></li>
                 <li><Link to="/settings">Settings</Link></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li><Link to="/">Welcome, Gareth</Link></li>
-                <li><Link to="/logout">Logout</Link></li>
+                <li><Link to="/login">Logout</Link></li>
               </ul>
             </div>
           </div>
@@ -56,10 +59,13 @@ class Home extends Component {
           <Route exact path="/" component={Dashboard}/>
           <Route path="/tips" component={Tips}/>
           <Route path="/table" component={Table}/>
+          <Route path="/comp" component={Comp}/>
+          <Route path="/settings" component={Settings}/>
+          <Route path="/login" component={Login}/>
         </Switch>
 
         <footer id="footer">
-          <p>Copyright Gareth Hind, &copy; 2018</p>
+          <p>Copyright Gareth Hind &copy; 2018</p>
         </footer>
       </div>
     );

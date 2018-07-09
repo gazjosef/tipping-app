@@ -123,7 +123,7 @@ class Dashboard extends Component {
                   <div className="panel-body">
                     <div className="col-md-3">
                       <div className="well dash-box">
-                        <h2><i className="fas fa-check"></i> 0/8</h2>
+                        <h2><i className="fas fa-check"></i> 6/8</h2>
                         <h4>Tips</h4>
                       </div>
                     </div>

@@ -121,7 +121,7 @@ body {
 /* Custom */
 
 .main-color-bg {
-  background-color: #e74c3c !important;
+  background-color: #e74c3c !important; /* Light Red */
   border-color: #c0392b !important;
   color: #fff !important; /* White */
 }
@@ -130,7 +130,7 @@ body {
 
 #header {
   background: #333333; /* Very Dark Grey */
-  color: #fff;
+  color: #fff; /* White */
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -148,13 +148,6 @@ body {
 
 .breadcrumb a {
   color: #333; /* Very Dark Grey */
-}
-
-/* Progress Bar */
-
-.progress-bar {
-  background: #333; /* Grey */ 
-  color: #fff;
 }
 
 /* Dash-Box */
@@ -207,11 +200,28 @@ td, th {
 }
 
 
+.tipping-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+  .select-round-label, .select-form-control {
+    padding: 5px;
+  }
+
 .tipping-row {
   display: flex;
   height: 70px;
   width: 100%;
   background: #F4F4F4;
+  margin-top: 10px;
   border: 1px #ccc solid;
 }
 
@@ -223,67 +233,75 @@ td, th {
   font-weight: 400;
 }
 
-.home-squad {
+.home-squad, .home-radio, .home-name, .home-logo, .home-score, .game-details, .game-date, .game-time, .game-venue, .away-squad, .away-score, .away-logo, .away-name, .away-radio, .select-round-label, .select-form-control {
   flex: 1;
+}
+
+.home-squad {
+  /*flex: 1;*/
   order: 1;
 }
 
   .home-radio {
-    flex: 1;
+    /*flex: 1;*/
     order: 1;
   }
 
   .home-name {
-    flex: 1;
+    /*flex: 1;*/
     order: 2;
   }
 
   .home-logo {
-    flex: 1;
+    /*flex: 1;*/
     order: 3;
   }
 
   .home-score {
-    flex: 1;
+    /*flex: 1;*/
     order: 4;
   }
 
 .game-details {
-  flex: 1;
+  /*flex: 1;*/
   order: 2;
   padding: 10px;
 }
 
   .game-date, .game-time, .game-venue {
-    flex: 1;
+    /*flex: 1;*/
     font-size: 12px;
     background: #f4f4f4;
   }
 
 .away-squad {
-  flex: 1;
+  /*flex: 1;*/
   order: 3;
 }
 
   .away-score {
-    flex: 1;
+    /*flex: 1;*/
     order: 1;
   }
 
   .away-logo {
-    flex: 1;
+    /*flex: 1;*/
     order: 2;
   }
 
   .away-name {
-    flex: 1;
+    /*flex: 1;*/
     order: 3;
   }
 
   .away-radio {
-    flex: 1;
+    /*flex: 1;*/
     order: 4;
   }
+
+.submit-button {
+  margin-top: 10px;
+}
 
 
 
