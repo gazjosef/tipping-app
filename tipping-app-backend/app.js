@@ -17,4 +17,16 @@ app.get('/teams', async (req, res) =>
   }
 })
 
+app.get('/schedule', async (req, res) => 
+{
+  try {
+    const db = await dbPromise;
+    const schedule = await db.all('SELECT * FROM schedule');
+    console.log(schedule);
+    res.send({schedule: schedule});
+  } catch (err) {
+    next(err);
+  }
+})
+
 app.listen(3001, () => console.log('Example app listening on port 3001!'))
