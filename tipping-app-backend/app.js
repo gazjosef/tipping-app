@@ -23,7 +23,7 @@ app.get('/schedule', async (req, res) =>
     const db = await dbPromise;
     const schedule = await db.all('SELECT * FROM schedule');
     console.log(schedule);
-    res.send({schedule: schedule});
+    res.send({result: schedule});
   } catch (err) {
     next(err);
   }

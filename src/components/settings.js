@@ -6,7 +6,6 @@ class Settings extends Component {
     return (
       <div className="Settings">
 
-
         { /* Breadcrumb */ }
         <section id="breadcrumb">
           <div className="container text-left">
