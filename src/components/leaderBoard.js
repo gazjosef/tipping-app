@@ -2,30 +2,10 @@ import React, { Component } from 'react';
 
 export default class LeaderBoard extends Component {
   state = {
-    schedule: null,
-    sortedResults: null
+    results: null
   };
   componentWillMount() {
-    this._loadScheduleRequest = this.loadSchedule()
-                                    .then(schedule  => 
-    {
-      console.log(schedule);
-      //create a dictionary of schedule based on teams as key
-      var teamResults = {};
-      for(var i = 0; i < schedule.length; ++i)
-      {
-        var item = schedule[i];
-        this.setResult(teamResults, item.HomeTeam, item.HomeResult);
-        this.setResult(teamResults, item.AwayTeam, item.AwayResult);
-      }
-      console.log(teamResults);
-      var sortedResults = [];
-      for(var key in teamResults)
-      {
-        sortedResults.push({name: key, result: teamResults[key] });
-      }
-      this.setState({sortedResults: sortedResults});
-    });
+    this.loadResults();
   }
   setResult(output, team, result)
   {
@@ -40,36 +20,33 @@ export default class LeaderBoard extends Component {
       output[team] = +result;
     }
   }
-  async loadSchedule()
+  async loadResults()
   {
-    var response = await fetch("/schedule");
-    var decodedResponse = await response.json();
-    console.log("schedule", decodedResponse);
-    this.setState({schedule: decodedResponse.result})
-    return decodedResponse.result;
-  }
-  componentWillUnmount() {
-    if (this._loadScheduleRequest) {
-      this._loadScheduleRequest.cancel();
-    }
+    var response = await fetch("/results");
+    var results = await response.json();
+    console.log("results", results);
+    this.setState({results: results})
   }
 
   render()
   {
     var output = [];
-    for(var key in this.state.sortedResults)
+    if(this.state.results !== null)
     {
-      var result = this.state.sortedResults[key];
-      
-      output.push((
-      <tr key={key}>
-        <th scope="row">1</th>
-        <td></td>
-        <td>{result.name}</td>
-        <td></td>
-        <td></td>
-        <td>{result.result}</td>            
-      </tr>));
+      for(var key in this.state.results)
+      {
+        var result = this.state.results[key];
+        
+        output.push((
+        <tr key={key}>
+          <th scope="row">{+key + 1}</th>
+          <td></td>
+          <td>{result.TeamName}</td>
+          <td>{result.Wins}</td>
+          <td>{result.Losses}</td>
+          <td>{result.Points}</td>
+        </tr>));
+      }
     }
     console.log(output);
     return (

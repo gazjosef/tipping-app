@@ -58,6 +58,7 @@ app.get('/results', async (req, res, next) =>
         Points: result[key].Points
       });
     }
+    arr.sort(function(a, b) { return b.Points - a.Points; });
     res.send(arr);
   } catch (err) {
     next(err);
