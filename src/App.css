@@ -23,10 +23,13 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* CSS Main */
 
@@ -42,7 +45,8 @@ body {
   border-radius: 0;
 }
 
-.navbar-nav > li > a, .navbar-brand {
+.navbar-nav > li > a,
+.navbar-brand {
   padding-top: 6px !important;
   padding-bottom: 0 !important;
   height: 33px;
@@ -195,10 +199,10 @@ img {
   height: 45px;
 }
 
-td, th {
+td,
+th {
   text-align: center;
 }
-
 
 .tipping-container {
   display: flex;
@@ -209,18 +213,19 @@ td, th {
 .form-group {
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 }
 
-  .select-round-label, .select-form-control {
-    padding: 5px;
-  }
+.select-round-label,
+.select-form-control {
+  padding: 5px;
+}
 
 .tipping-row {
   display: flex;
   height: 70px;
   width: 100%;
-  background: #F4F4F4;
+  background: #f4f4f4;
   margin-top: 10px;
   border: 1px #ccc solid;
 }
@@ -233,7 +238,22 @@ td, th {
   font-weight: 400;
 }
 
-.home-squad, .home-radio, .home-name, .home-logo, .home-score, .game-details, .game-date, .game-time, .game-venue, .away-squad, .away-score, .away-logo, .away-name, .away-radio, .select-round-label, .select-form-control {
+.home-squad,
+.home-radio,
+.home-name,
+.home-logo,
+.home-score,
+.game-details,
+.game-date,
+.game-time,
+.game-venue,
+.away-squad,
+.away-score,
+.away-logo,
+.away-name,
+.away-radio,
+.select-round-label,
+.select-form-control {
   flex: 1;
 }
 
@@ -242,25 +262,25 @@ td, th {
   order: 1;
 }
 
-  .home-radio {
-    /*flex: 1;*/
-    order: 1;
-  }
+.home-radio {
+  /*flex: 1;*/
+  order: 1;
+}
 
-  .home-name {
-    /*flex: 1;*/
-    order: 2;
-  }
+.home-name {
+  /*flex: 1;*/
+  order: 2;
+}
 
-  .home-logo {
-    /*flex: 1;*/
-    order: 3;
-  }
+.home-logo {
+  /*flex: 1;*/
+  order: 3;
+}
 
-  .home-score {
-    /*flex: 1;*/
-    order: 4;
-  }
+.home-score {
+  /*flex: 1;*/
+  order: 4;
+}
 
 .game-details {
   /*flex: 1;*/
@@ -268,44 +288,39 @@ td, th {
   padding: 10px;
 }
 
-  .game-date, .game-time, .game-venue {
-    /*flex: 1;*/
-    font-size: 12px;
-    background: #f4f4f4;
-  }
+.game-date,
+.game-time,
+.game-venue {
+  /*flex: 1;*/
+  font-size: 12px;
+  background: #f4f4f4;
+}
 
 .away-squad {
   /*flex: 1;*/
   order: 3;
 }
 
-  .away-score {
-    /*flex: 1;*/
-    order: 1;
-  }
+.away-score {
+  /*flex: 1;*/
+  order: 1;
+}
 
-  .away-logo {
-    /*flex: 1;*/
-    order: 2;
-  }
+.away-logo {
+  /*flex: 1;*/
+  order: 2;
+}
 
-  .away-name {
-    /*flex: 1;*/
-    order: 3;
-  }
+.away-name {
+  /*flex: 1;*/
+  order: 3;
+}
 
-  .away-radio {
-    /*flex: 1;*/
-    order: 4;
-  }
+.away-radio {
+  /*flex: 1;*/
+  order: 4;
+}
 
 .submit-button {
   margin-top: 10px;
 }
-
-
-
-
-
-
-
