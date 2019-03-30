@@ -210,10 +210,15 @@ th {
   justify-content: space-between;
 }
 
-.form-group {
+/* .form-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
+} */
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .select-round-label,

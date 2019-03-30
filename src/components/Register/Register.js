@@ -48,11 +48,11 @@ class Register extends React.Component {
           <h2 className="form-signin-heading">Register</h2>
 
           <div className="form-group">
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="inputName">Name</label>
             <input
               onChange={this.onNameChange}
               type="text"
-              id="name"
+              id="inputName"
               name="name"
               className="form-control"
               placeholder="Enter name"
@@ -62,7 +62,7 @@ class Register extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="inputEmail">Email address: </label>
+            <label htmlFor="inputEmail">Email address</label>
             <input
               onChange={this.onEmailChange}
               type="email"
@@ -75,7 +75,7 @@ class Register extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="inputPassword">Password: </label>
+            <label htmlFor="inputPassword">Password</label>
             <input
               onChange={this.onPasswordChange}
               type="password"
@@ -87,7 +87,7 @@ class Register extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="inputFavTeam">Select Team: </label>
+            <label htmlFor="inputFavTeam">Select Team</label>
             <select className="form-control" id="favTeam">
               <option>Brisbane Broncos</option>
               <option>Canberra Raiders</option>
