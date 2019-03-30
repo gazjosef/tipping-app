@@ -1,1 +1,1 @@
-Footy Tipping Application
+Tipping Competiton app
