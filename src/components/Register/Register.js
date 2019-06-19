@@ -23,7 +23,7 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/register", {
+    fetch("http://localhost:5000/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -85,7 +85,7 @@ class Register extends React.Component {
               required
             />
           </div>
-
+          {/* 
           <div className="form-group">
             <label htmlFor="inputFavTeam">Select Team</label>
             <select className="form-control" id="favTeam">
@@ -106,7 +106,7 @@ class Register extends React.Component {
               <option>Sydney Roosters</option>
               <option>West Tigers</option>
             </select>
-          </div>
+          </div> */}
 
           <button
             onClick={this.onSubmitSignIn}
