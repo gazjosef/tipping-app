@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SideTable from "../SideTable/SideTable";
 import Overview from "../Overview/Overview";
-import Tips from "../Tips/Tips";
 import TippingContainer from "../Tips/TippingContainer";
 
 class Footer extends Component {

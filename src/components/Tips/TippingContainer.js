@@ -1,8 +1,23 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./TippingContainer.css";
 
 class TippingContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fixtureId: "",
+      round: "",
+      day: "",
+      date: "",
+      home: "",
+      away: "",
+      stadium: "",
+      time: "",
+      selection: "",
+      resultHome: "",
+      resultAway: ""
+    };
+  }
   render() {
     return (
       <div className="TippingContainer">
