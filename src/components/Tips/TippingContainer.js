@@ -5,8 +5,7 @@ class TippingContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fixtures: [],
-      selections: []
+      fixtures: []
     };
   }
 
@@ -29,12 +28,15 @@ class TippingContainer extends Component {
       selections: event.target.value
     });
   };
+
   selectHomeTeam = event => {
     this.selectTeam(event.target.value, "home");
   };
+
   selectAwayTeam = event => {
     this.selectTeam(event.target.value, "away");
   };
+
   selectTeam = (index, team) => {
     let fixtures = this.state.fixtures;
     fixtures[index].selection = team;
