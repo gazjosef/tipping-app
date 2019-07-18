@@ -67,15 +67,18 @@ class TippingContainer extends Component {
       return (
         <div className="tipping-row">
           <div className="squad home-squad">
-            <input
-              type="radio"
-              className="ml-2 mr-2"
-              value={index}
-              checked={fixture.selection === "home"}
-              onChange={this.selectHomeTeam}
-            />
-            {fixture.home}
-            {fixture.resulthome}
+            <div>
+              <input
+                type="radio"
+                className="ml-2 mr-2"
+                value={index}
+                checked={fixture.selection === "home"}
+                onChange={this.selectHomeTeam}
+              />
+            </div>
+            <div className="home-name">{fixture.home}</div>
+            <div className="home-logo" />
+            <div className="home-score"> {fixture.resulthome}</div>
           </div>
           <div className="game-details text-center">
             <div>
@@ -86,15 +89,18 @@ class TippingContainer extends Component {
             <div>{fixture.stadium}</div>
           </div>
           <div className="squad away-squad text-right">
-            {fixture.resultaway}
-            {fixture.away}
-            <input
-              type="radio"
-              className="ml-2 mr-2"
-              value={index}
-              checked={fixture.selection === "away"}
-              onChange={this.selectAwayTeam}
-            />
+            <div className="away-score">{fixture.resultaway}</div>
+            <div className="away-logo" />
+            <div className="away-name">{fixture.away}</div>
+            <div className="radio away-radio">
+              <input
+                type="radio"
+                className="ml-2 mr-2"
+                value={index}
+                checked={fixture.selection === "away"}
+                onChange={this.selectAwayTeam}
+              />
+            </div>
           </div>
         </div>
       );
