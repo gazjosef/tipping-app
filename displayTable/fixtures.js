@@ -1,5 +1,3 @@
-// import fixtures from "./fixtures";
-
 const fixtures = [
   {
     fixtureid: 1,
@@ -98,32 +96,3 @@ const fixtures = [
     resultaway: "21"
   }
 ];
-
-let tablehtml = "<div id='tipping-results'>";
-
-for (let i = 0; i < fixtures.length; i++) {
-  tablehtml +=
-    "<div id='tipping-row'><div id='tipping-home' class='col-lg-4'>" +
-    "<input type='radio' class='ml-2 mr-2'>" +
-    fixtures[i].home +
-    fixtures[i].resulthome +
-    "</div>" +
-    "<div id='tipping-center' class='col-lg-4'>" +
-    "<div>" +
-    fixtures[i].day +
-    " " +
-    fixtures[i].date +
-    "</div><div>" +
-    fixtures[i].time +
-    "</div><div>" +
-    fixtures[i].stadium +
-    "</div></div>" +
-    "<div id='tipping-away' class='col-lg-4'>" +
-    fixtures[i].resultaway +
-    fixtures[i].away +
-    "<input type='radio' class='ml-2 mr-2'>" +
-    "</div></div>";
-}
-tablehtml += "</div>";
-
-document.getElementById("tipping-table").innerHTML = tablehtml;

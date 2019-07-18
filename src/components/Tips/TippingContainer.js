@@ -50,8 +50,7 @@ class TippingContainer extends Component {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: this.state.name,
-        selection: this.state.selection
+        fixtures: this.state.fixtures
       })
     })
       .then(response => response.json())
@@ -67,15 +66,7 @@ class TippingContainer extends Component {
       //console.log(fixture);
       return (
         <div className="tipping-row">
-          <div id="tipping-home squad home-squad" className="col-lg-4">
-            {/* <input
-              type="radio"
-              className="ml-2 mr-2"
-              value={fixture.home}
-              checked={fixture.selection === fixture.home}
-              onChange={this.handleChange}
-            /> */}
-
+          <div className="squad home-squad">
             <input
               type="radio"
               className="ml-2 mr-2"
@@ -86,7 +77,7 @@ class TippingContainer extends Component {
             {fixture.home}
             {fixture.resulthome}
           </div>
-          <div id="tipping-center" className="col-lg-4">
+          <div className="game-details text-center">
             <div>
               {fixture.day}
               {fixture.date}
@@ -94,7 +85,7 @@ class TippingContainer extends Component {
             <div>{fixture.time}</div>
             <div>{fixture.stadium}</div>
           </div>
-          <div id="tipping-away squad away-squad" className="col-lg-4">
+          <div className="squad away-squad text-right">
             {fixture.resultaway}
             {fixture.away}
             <input
