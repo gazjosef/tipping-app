@@ -67,39 +67,44 @@ class TippingContainer extends Component {
       return (
         <div className="tipping-row">
           <div className="squad home-squad">
-            <div>
-              <input
-                type="radio"
-                className="ml-2 mr-2"
-                value={index}
-                checked={fixture.selection === "home"}
-                onChange={this.selectHomeTeam}
-              />
+            <div className="radio home-radio">
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "home"}
+                  onChange={this.selectHomeTeam}
+                />
+              </label>
             </div>
             <div className="home-name">{fixture.home}</div>
             <div className="home-logo" />
             <div className="home-score"> {fixture.resulthome}</div>
           </div>
           <div className="game-details text-center">
-            <div>
+            <div className="game-date">
               {fixture.day}
+              {}
               {fixture.date}
             </div>
-            <div>{fixture.time}</div>
-            <div>{fixture.stadium}</div>
+            <div className="game-time">{fixture.time}</div>
+            <div className="game-venue">{fixture.stadium}</div>
           </div>
           <div className="squad away-squad text-right">
             <div className="away-score">{fixture.resultaway}</div>
             <div className="away-logo" />
             <div className="away-name">{fixture.away}</div>
             <div className="radio away-radio">
-              <input
-                type="radio"
-                className="ml-2 mr-2"
-                value={index}
-                checked={fixture.selection === "away"}
-                onChange={this.selectAwayTeam}
-              />
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "away"}
+                  onChange={this.selectAwayTeam}
+                />
+              </label>
             </div>
           </div>
         </div>
