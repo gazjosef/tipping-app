@@ -34,11 +34,11 @@
   flex: 1;
 }
 
-.home-squad {
+/* .home-squad {
   order: 1;
-}
+} */
 
-.home-radio {
+/* .home-radio {
   order: 1;
 }
 
@@ -52,25 +52,30 @@
 
 .home-score {
   order: 4;
-}
+} */
 
+.game-details {
+  /* order: 2; */
+  padding: 10px;
+}
+/* 
 .game-details {
   order: 2;
   padding: 10px;
-}
+} */
 
 .game-date,
 .game-time,
 .game-venue {
   font-size: 12px;
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
 }
 
-.away-squad {
+/* .away-squad {
   order: 3;
-}
+} */
 
-.away-score {
+/* .away-score {
   order: 1;
 }
 
@@ -84,7 +89,7 @@
 
 .away-radio {
   order: 4;
-}
+} */
 
 .submit-button {
   margin-top: 10px;
