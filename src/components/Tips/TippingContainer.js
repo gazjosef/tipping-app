@@ -10,7 +10,7 @@ class TippingContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/fixtures", {
+    fetch("https://tipping-app-api.herokuapp.com/fixtures", {
       method: "get",
       headers: { "Content-Type": "application/json" }
     })
