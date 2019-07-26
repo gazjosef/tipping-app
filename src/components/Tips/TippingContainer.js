@@ -46,7 +46,7 @@ class TippingContainer extends Component {
   };
 
   onSubmitTip = () => {
-    fetch("http://localhost:5000/tips", {
+    fetch("https://tipping-app-api.herokuapp.com/fixtures", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
