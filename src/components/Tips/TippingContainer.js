@@ -85,7 +85,7 @@ class TippingContainer extends Component {
           <div className="game-details text-center">
             <div className="game-date">
               {fixture.day}
-              {}
+              {"  "}
               {fixture.date}
             </div>
             <div className="game-time">{fixture.time}</div>

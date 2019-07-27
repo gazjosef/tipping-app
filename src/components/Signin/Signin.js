@@ -18,6 +18,7 @@ class Signin extends Component {
   };
 
   onSubmitSignIn = () => {
+    console.log("test submit signin");
     fetch("https://tipping-app-api.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
