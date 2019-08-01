@@ -9,4 +9,9 @@
 - PostgreSQL
 
 ## GitHub Page
+
 https://gazjosef.github.io/tipping-app/
+
+## Author
+
+Gareth Hind
