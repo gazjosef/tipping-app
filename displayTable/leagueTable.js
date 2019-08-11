@@ -538,12 +538,12 @@ fixtures2.forEach(fixture => {
 
 // Sort league table by points
 leagueTable.sort((a, b) => {
-  let x = a.points;
-  let y = b.points;
-  if (x < y) {
+  // let x = a.points;
+  // let y = b.points;
+  if (a.points < b.points) {
     return 1;
   }
-  if (y < x) {
+  if (b.points < a.points) {
     return -1;
   }
 });

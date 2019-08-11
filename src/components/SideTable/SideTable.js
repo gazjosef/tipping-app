@@ -5,6 +5,9 @@ class SideTable extends Component {
     super(props);
     this.state = {
       fixtures: []
+      // allNames: [],
+      // teams: [],
+      // table: []
     };
   }
   componentDidMount() {
@@ -19,82 +22,78 @@ class SideTable extends Component {
         });
       });
   }
-
   render() {
-    const leagueTable = this.state.fixtures.map((fixture, index) => {
-      // Arrays
-      let allNames = [];
-      let teamNames = [];
-      let table = [];
+    // Arrays
+    let teams = [];
+    let allNames = [];
+    let leagueTable = [];
 
-      // Collect all team names
-      allNames.push(fixture.home);
-      allNames.push(fixture.away);
+    // Collect all names
+    this.state.fixtures.map((fixture, index) => {
+      return allNames.push(fixture.home) && allNames.push(fixture.away);
+    });
 
-      // Remove duplicate names
-      for (let i = 0; i < allNames.length; i++) {
-        if (teamNames.indexOf(allNames[i]) === -1) {
-          teamNames.push(allNames[i]);
-        }
+    // Remove duplicates
+    allNames.forEach(name => {
+      if (teams.indexOf(name) === -1) {
+        teams.push(name);
       }
-      console.log(teamNames);
+    });
+    console.log(teams);
 
-      // Create League Table
-      teamNames.forEach(name => {
-        let teamScore = {
-          name: name,
-          wins: 0,
-          losses: 0,
-          homePointsScored: 0,
-          homePointsConceded: 0,
-          awayPointsScored: 0,
-          awayPointsConceded: 0,
-          points: 0
-        };
-        table.push(teamScore);
-      });
+    // Create League Table
+    teams.forEach(name => {
+      let teamScore = {
+        name: name,
+        wins: 0,
+        losses: 0,
+        homePointsScored: 0,
+        homePointsConceded: 0,
+        awayPointsScored: 0,
+        awayPointsConceded: 0,
+        points: 0
+      };
+      leagueTable.push(teamScore);
+    });
+    console.log(leagueTable);
 
-      fixture.forEach(fixture => {
-        let homeTeam = table.find(team => team.name === fixture.home);
-        let awayTeam = table.find(team => team.name === fixture.away);
+    this.state.fixtures.forEach(fixture => {
+      let homeTeam = leagueTable.find(team => team.name === fixture.home);
+      let awayTeam = leagueTable.find(team => team.name === fixture.away);
 
-        homeTeam.homePointsScored += +fixture.resulthome;
-        homeTeam.homePointsConceded += +fixture.resultaway;
-        awayTeam.awayPointsScored += +fixture.resultaway;
-        awayTeam.awayPointsConceded += +fixture.resulthome;
+      homeTeam.homePointsScored += +parseInt(fixture.result_home);
+      homeTeam.homePointsConceded += +parseInt(fixture.result_away);
+      awayTeam.awayPointsScored += +parseInt(fixture.result_away);
+      awayTeam.awayPointsConceded += +parseInt(fixture.result_home);
 
-        if (parseInt(fixture.resulthome) > parseInt(fixture.resultaway)) {
-          homeTeam.wins += 1;
-          homeTeam.points += 2;
-          awayTeam.losses += 1;
-        }
-        if (parseInt(fixture.resultaway) > parseInt(fixture.resulthome)) {
-          awayTeam.wins += 1;
-          awayTeam.points += 2;
-          homeTeam.losses += 1;
-        }
-      });
+      if (parseInt(fixture.result_home) > parseInt(fixture.result_away)) {
+        homeTeam.wins += 1;
+        homeTeam.points += 2;
+        awayTeam.losses += 1;
+      }
+      if (parseInt(fixture.result_away) > parseInt(fixture.result_home)) {
+        awayTeam.wins += 1;
+        awayTeam.points += 2;
+        homeTeam.losses += 1;
+      }
+    });
 
-      // Sort league table by points
-      table.sort((a, b) => {
-        let x = a.points;
-        let y = b.points;
-        if (x < y) {
-          return 1;
-        }
-        if (y < x) {
-          return -1;
-        }
-      });
-      console.log(table);
+    // Sort league table by points
+    leagueTable.sort((a, b) => {
+      return a.points < b.points ? 1 : -1;
+    });
+    console.log(leagueTable);
 
-      //console.log(fixture);
+    const leagueRow = leagueTable.map((team, index) => {
       return (
-        <div className="tipping-row">
-          <div className="squad away-squad text-right">
-            <h1>Hello World</h1>
-          </div>
-        </div>
+        <tr key={index}>
+          <th scope="row">{index + 1}</th>
+          <td />
+          <td>{team.name}</td>
+          <td>{team.wins}</td>
+          <td>{team.losses}</td>
+          <td>{team.points}</td>
+        </tr>
       );
     });
     return (
@@ -118,73 +117,7 @@ class SideTable extends Component {
                   <th scope="col">Pts</th>
                 </tr>
               </thead>
-              <tbody>
-                {leagueTable}
-                <tr>
-                  <th scope="row">1</th>
-                  <td />
-                  <td>Dragons</td>
-                  <td>12</td>
-                  <td>4</td>
-                  <td>26</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td />
-                  <td>Rabbitohs</td>
-                  <td>11</td>
-                  <td>5</td>
-                  <td>24</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td />
-                  <td>Storm</td>
-                  <td>10</td>
-                  <td>6</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td />
-                  <td>Panthers</td>
-                  <td>10</td>
-                  <td>6</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td />
-                  <td>Warriors</td>
-                  <td>10</td>
-                  <td>6</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td />
-                  <td>Roosters</td>
-                  <td>10</td>
-                  <td>6</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <th scope="row">7</th>
-                  <td />
-                  <td>Sharks</td>
-                  <td>10</td>
-                  <td>6</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <th scope="row">8 </th>
-                  <td />
-                  <td>Broncos</td>
-                  <td>9</td>
-                  <td>7</td>
-                  <td>18</td>
-                </tr>
-              </tbody>
+              <tbody>{leagueRow}</tbody>
             </table>
           </div>
         </div>
