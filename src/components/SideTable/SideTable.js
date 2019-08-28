@@ -5,9 +5,6 @@ class SideTable extends Component {
     super(props);
     this.state = {
       fixtures: []
-      // allNames: [],
-      // teams: [],
-      // table: []
     };
   }
   componentDidMount() {

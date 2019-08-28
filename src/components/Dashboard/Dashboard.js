@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SideTable from "../SideTable/SideTable";
-import Overview from "../Overview/Overview";
 import TippingContainer from "../Tips/TippingContainer";
 
 class Footer extends Component {
@@ -17,7 +16,7 @@ class Footer extends Component {
 
               {/* Main Section */}
               <div className="col-md-9">
-                <Overview />
+                {/* <Overview /> */}
 
                 {/* Latest Tips */}
                 <div className="panel panel-default">

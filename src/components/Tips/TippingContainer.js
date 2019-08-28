@@ -46,7 +46,7 @@ class TippingContainer extends Component {
   };
 
   onSubmitTip = () => {
-    fetch("https://tipping-app-api.herokuapp.com/fixtures", {
+    fetch("https://tipping-app-api.herokuapp.com/tips", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -115,8 +115,41 @@ class TippingContainer extends Component {
       <div className="TippingContainer">
         {/* Tipping Container */}
         <div className="tipping-container">
+          {/* Select Round */}
+          <div className="form-group select-round">
+            <label htmlFor="round">Select Round</label>
+            <select className="form-control" id="select_round">
+              <option>Round 1</option>
+              <option>Round 2</option>
+              <option>Round 3</option>
+              <option>Round 4</option>
+              <option>Round 5</option>
+              <option>Round 6</option>
+              <option>Round 7</option>
+              <option>Round 8</option>
+              <option>Round 9</option>
+              <option>Round 9</option>
+              <option>Round 10</option>
+              <option>Round 11</option>
+              <option>Round 12</option>
+              <option>Round 13</option>
+              <option>Round 14</option>
+              <option>Round 15</option>
+              <option>Round 16</option>
+              <option>Round 17</option>
+              <option>Round 18</option>
+              <option>Round 19</option>
+              <option>Round 20</option>
+              <option>Round 21</option>
+              <option>Round 22</option>
+              <option>Round 23</option>
+              <option>Round 24</option>
+              <option>Round 25</option>
+              <option>Round 26</option>
+            </select>
+          </div>
+          {/* Fixture Round */}
           {fixtureRound}
-
           {/* Submit Button */}
           <div className="submit-button text-right">
             <button
@@ -128,7 +161,6 @@ class TippingContainer extends Component {
             </button>
           </div>
         </div>
-        {/* End of Tipping Container */}
       </div>
     );
   }

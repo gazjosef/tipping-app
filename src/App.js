@@ -11,10 +11,6 @@ import Register from "./components/Register/Register";
 
 /*
 import Tips from "./components/Tips/Tips";
-import Table from "./components/Table/Table";
-import Comp from "./components/Comp/Comp";
-import Settings from "./components/Settings/Settings";
-import { Switch, Route } from "react-router-dom";
 */
 
 class App extends Component {
@@ -59,7 +55,11 @@ class App extends Component {
     const { isSignedIn, route } = this.state;
     return (
       <div className="App">
-        <NavBar isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        <NavBar
+          isSignedIn={isSignedIn}
+          name={this.state.user.name}
+          onRouteChange={this.onRouteChange}
+        />
         <Header />
 
         {route === "Dashboard" ? (
@@ -72,14 +72,6 @@ class App extends Component {
             onRouteChange={this.onRouteChange}
           />
         )}
-        {/* <Switch>
-              <Route exact path="/" component={Dashboard} />
-              <Route path="/tips" component={Tips} />
-              <Route path="/table" component={Table} />
-              <Route path="/comp" component={Comp} />
-              <Route path="/settings" component={Settings} />
-              <Route path="/login" component={Login} />
-            </Switch>*/}
         <Footer />
       </div>
     );
