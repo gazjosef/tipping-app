@@ -36,7 +36,6 @@ class SideTable extends Component {
         teams.push(name);
       }
     });
-    console.log(teams);
 
     // Create League Table
     teams.forEach(name => {

@@ -50,15 +50,12 @@ class TippingContainer extends Component {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        fixtures: this.state.fixtures
+        fixture_id: this.state.fixtures.fixture_id,
+        selection: this.state.fixtures.selection
       })
     })
       .then(response => response.json())
-      .then(fixtures => {
-        this.setState({
-          fixtures: fixtures
-        });
-      });
+      .then(fixtures => console.log("12345"));
   };
 
   render() {
