@@ -155,8 +155,8 @@ class TippingContainer extends Component {
           <div className="form-group select-round">
             <label htmlFor="gender">Select Round</label>
             <select
-              className="form-control"
-              id="select-Round"
+              className="form-control text-right"
+              id="selectRound"
               onChange={this.selectRound}
               value={this.state.selectedRound}
             >
