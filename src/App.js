@@ -42,7 +42,6 @@ class App extends Component {
   };
 
   onRouteChange = route => {
-    console.log("clicked");
     if (route === "Signout") {
       this.setState({ isSignedIn: false });
     } else if (route === "Dashboard") {

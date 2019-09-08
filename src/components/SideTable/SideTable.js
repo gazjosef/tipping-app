@@ -51,7 +51,6 @@ class SideTable extends Component {
       };
       leagueTable.push(teamScore);
     });
-    console.log(leagueTable);
 
     this.state.fixtures.forEach(fixture => {
       let homeTeam = leagueTable.find(team => team.name === fixture.home);
@@ -78,7 +77,6 @@ class SideTable extends Component {
     leagueTable.sort((a, b) => {
       return a.points < b.points ? 1 : -1;
     });
-    console.log(leagueTable);
 
     const leagueRow = leagueTable.map((team, index) => {
       return (
