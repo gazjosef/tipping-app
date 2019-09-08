@@ -26,6 +26,7 @@ class TippingContainer extends Component {
   }
 
   selectHomeTeam = event => {
+    console.log("clicked");
     this.selectTeam(event.target.value, "home");
   };
 
@@ -68,7 +69,8 @@ class TippingContainer extends Component {
       console.log(fixture);
       console.log(body);
 
-      fetch("https://tipping-app-api.herokuapp.com/tips", {
+      // fetch("https://tipping-app-api.herokuapp.com/tips", {
+      fetch("http://localhost:5000/tips", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: body
