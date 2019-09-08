@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import "./TippingContainer.css";
 
-// import Dropdown from "../Dropdown/Dropdown";
-
 class TippingContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       fixtures: [],
-      tips: [],
-      selectedItem: ""
+      selectedRound: ""
     };
   }
 
@@ -25,14 +22,8 @@ class TippingContainer extends Component {
           fixtures: fixtures
         });
       });
+    this.setState({ selectedRound: "Round 1" });
   }
-
-  // handleChange = event => {
-  //   console.log(event.target.value);
-  //   this.setState({
-  //     selections: event.target.value
-  //   });
-  // };
 
   selectHomeTeam = event => {
     this.selectTeam(event.target.value, "home");
@@ -50,20 +41,31 @@ class TippingContainer extends Component {
     });
   };
 
-  selectItem = item =>
+  selectRound = event => {
+    console.log("round selected");
+    // console.log(event.target.value);
     this.setState({
-      selectedItem: item
+      selectedRound: event.target.value
     });
+  };
+
+  filterFixtures = () => {
+    return this.state.fixtures.filter((fixture, index) => {
+      return fixture.round === this.state.selectedRound;
+    });
+  };
 
   onSubmitTip = () => {
-    for (let i = 0; i < this.state.fixtures.length; ++i) {
-      let fixture = this.state.fixtures[i];
+    let fixtures = this.filterFixtures();
+    for (let i = 0; i < fixtures.length; ++i) {
+      let fixture = fixtures[i];
       let tip = {
-        userid: "",
-        fixtureid: fixture.id,
+        userid: "gazjoseph@gmail.com",
+        fixtureid: fixture.fixture_id,
         selection: fixture.selection
       };
       let body = JSON.stringify(tip);
+      console.log(fixture);
       console.log(body);
 
       fetch("https://tipping-app-api.herokuapp.com/tips", {
@@ -74,51 +76,12 @@ class TippingContainer extends Component {
         .then(response => response.json())
         .then(json => console.log(json));
     }
-
-    // fetch("https://tipping-app-api.herokuapp.com/tips", {
-    //   method: "post",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(
-    //     {
-    //       fixture_id: this.state.fixtureOne,
-    //       selection: this.state.tipOne
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureTwo,
-    //       selection: this.state.tipTwo
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureThree,
-    //       selection: this.state.tipThree
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureFour,
-    //       selection: this.state.tipFour
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureFive,
-    //       selection: this.state.tipFive
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureSix,
-    //       selection: this.state.tipSix
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureSeven,
-    //       selection: this.state.tipSeven
-    //     },
-    //     {
-    //       fixture_id: this.state.fixtureEight,
-    //       selection: this.state.tipEight
-    //     }
-    //   )
-    // }).then(response => response.json());
-    // .then(fixtures => console.log("12345", fixtures));
   };
 
   render() {
     console.log(this.state);
-    const fixtureRound = this.state.fixtures.map((fixture, index) => {
+    const fixtures = this.filterFixtures();
+    const fixtureRound = fixtures.map((fixture, index) => {
       //console.log(fixture);
       return (
         <div key={index} className="tipping-row">
@@ -167,33 +130,21 @@ class TippingContainer extends Component {
       );
     });
 
-    const rounds = [
-      "Round 1",
-      "Round 2",
-      "Round 3",
-      "Round 4",
-      "Round 5",
-      "Round 6",
-      "Round 7",
-      "Round 8",
-      "Round 9",
-      "Round 10",
-      "Round 11",
-      "Round 12",
-      "Round 13",
-      "Round 14",
-      "Round 15",
-      "Round 16",
-      "Round 17",
-      "Round 18",
-      "Round 19",
-      "Round 20",
-      "Round 21",
-      "Round 22",
-      "Round 23",
-      "Round 24",
-      "Round 25"
-    ];
+    let rounds = [];
+
+    const allRounds = this.state.fixtures.map(fixture => {
+      return fixture.round;
+    });
+    console.log(allRounds);
+
+    // Remove duplicates
+    allRounds.forEach(round => {
+      if (rounds.indexOf(round) === -1) {
+        rounds.push(round);
+      }
+    });
+    console.log(rounds);
+
     return (
       <div className="TippingContainer">
         {/* Tipping Container */}
@@ -201,13 +152,17 @@ class TippingContainer extends Component {
           {/* Select Round */}
           <div className="form-group select-round">
             <label htmlFor="gender">Select Round</label>
-            <select className="form-control" id="selectRound">
+            <select
+              className="form-control"
+              id="select-Round"
+              onChange={this.selectRound}
+              value={this.state.selectedRound}
+            >
               {rounds.map((round, index) => (
                 <option
                   key={index}
-                  onClick={() => this.selectItem(round)}
                   className={
-                    this.state.selectedItem === round ? "selected" : ""
+                    this.state.selectedRound === round ? "selected" : ""
                   }
                 >
                   {round}
