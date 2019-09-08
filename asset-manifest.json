@@ -1,16 +1,16 @@
 {
-  "main.css": "/tipping-app/static/css/main.7f0d45f6.chunk.css",
-  "main.js": "/tipping-app/static/js/main.3831d69d.chunk.js",
-  "main.js.map": "/tipping-app/static/js/main.3831d69d.chunk.js.map",
+  "main.css": "/tipping-app/static/css/main.94b2c579.chunk.css",
+  "main.js": "/tipping-app/static/js/main.8840e3ef.chunk.js",
+  "main.js.map": "/tipping-app/static/js/main.8840e3ef.chunk.js.map",
   "runtime~main.js": "/tipping-app/static/js/runtime~main.71602086.js",
   "runtime~main.js.map": "/tipping-app/static/js/runtime~main.71602086.js.map",
   "static/css/2.999c190b.chunk.css": "/tipping-app/static/css/2.999c190b.chunk.css",
   "static/js/2.ba0094bc.chunk.js": "/tipping-app/static/js/2.ba0094bc.chunk.js",
   "static/js/2.ba0094bc.chunk.js.map": "/tipping-app/static/js/2.ba0094bc.chunk.js.map",
   "index.html": "/tipping-app/index.html",
-  "precache-manifest.a27cbf8eb508737d335dc9d0752b5e91.js": "/tipping-app/precache-manifest.a27cbf8eb508737d335dc9d0752b5e91.js",
+  "precache-manifest.96e888f0de6ec1ac5589827b3c4cd9bb.js": "/tipping-app/precache-manifest.96e888f0de6ec1ac5589827b3c4cd9bb.js",
   "service-worker.js": "/tipping-app/service-worker.js",
   "static/css/2.999c190b.chunk.css.map": "/tipping-app/static/css/2.999c190b.chunk.css.map",
-  "static/css/main.7f0d45f6.chunk.css.map": "/tipping-app/static/css/main.7f0d45f6.chunk.css.map",
+  "static/css/main.94b2c579.chunk.css.map": "/tipping-app/static/css/main.94b2c579.chunk.css.map",
   "static/media/bootstrap.min.css": "/tipping-app/static/media/glyphicons-halflings-regular.fa277232.woff"
 }
