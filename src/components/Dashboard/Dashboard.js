@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SideTable from "../SideTable/SideTable";
+import Comp from "../Comp/Comp";
 import TippingContainer from "../Tips/TippingContainer";
+import Tips from "../Tips/Tips";
 
-class Footer extends Component {
+class Main extends Component {
   render() {
     return (
       <div className="Dashboard">
@@ -13,30 +15,13 @@ class Footer extends Component {
             <div className="row">
               <Breadcrumb />
               <SideTable />
-
-              {/* Main Section */}
-              <div className="col-md-9">
-                {/* <Overview /> */}
-
-                {/* Latest Tips */}
-                <div className="panel panel-default">
-                  <div className="panel-heading main-color-bg">
-                    <h3 className="panel-title">Latest Tips</h3>
-                  </div>
-
-                  <div className="panel-body">
-                    <TippingContainer />
-                  </div>
-                </div>
-              </div>
-              {/* End of Main Section */}
+              {/* <Comp /> */}
+              <Tips />
             </div>
-            {/* End of Row */}
           </div>
-          {/* End of Container */}
         </section>
       </div>
     );
   }
 }
-export default Footer;
+export default Main;

@@ -95,6 +95,7 @@ class SideTable extends Component {
         {/* Side Table */}
         <div className="col-md-3">
           <div className="panel panel-default">
+            {/* Heading */}
             <div className="panel-heading main-color-bg">
               <h3 className="panel-title">League Table</h3>
             </div>

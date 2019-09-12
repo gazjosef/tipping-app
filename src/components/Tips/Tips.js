@@ -1,283 +1,200 @@
 import React, { Component } from "react";
-import SideTable from "../SideTable/SideTable";
-import { Link } from "react-router-dom";
+import "./TippingContainer.css";
 
 class Tips extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fixtures: [],
+      selectedRound: ""
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://tipping-app-api.herokuapp.com/fixtures", {
+      method: "get",
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(response => response.json())
+      .then(fixtures => {
+        console.log("fixtures: ", fixtures);
+        this.setState({
+          fixtures: fixtures
+        });
+      });
+    this.setState({ selectedRound: "Round 1" });
+  }
+
+  selectHomeTeam = event => {
+    console.log("clicked");
+    this.selectTeam(event.target.value, "home");
+  };
+
+  selectAwayTeam = event => {
+    this.selectTeam(event.target.value, "away");
+  };
+
+  selectTeam = (index, team) => {
+    let fixtures = this.state.fixtures;
+    fixtures[index].selection = team;
+    this.setState({
+      fixtures: fixtures
+    });
+  };
+
+  selectRound = event => {
+    console.log("round selected");
+    // console.log(event.target.value);
+    this.setState({
+      selectedRound: event.target.value
+    });
+  };
+
+  filterFixtures = () => {
+    return this.state.fixtures.filter((fixture, index) => {
+      return fixture.round === this.state.selectedRound;
+    });
+  };
+
+  onSubmitTip = () => {
+    let fixtures = this.filterFixtures();
+    for (let i = 0; i < fixtures.length; ++i) {
+      let fixture = fixtures[i];
+      let tip = {
+        userid: "gazjoseph@gmail.com",
+        fixtureid: fixture.fixture_id,
+        selection: fixture.selection
+      };
+      let body = JSON.stringify(tip);
+      console.log(fixture);
+      console.log(body);
+
+      // fetch("https://tipping-app-api.herokuapp.com/tips", {
+      fetch("http://localhost:5000/tips", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: body
+      })
+        .then(response => response.json())
+        .then(json => console.log(json));
+    }
+  };
+
   render() {
-    return (
-      <div className="Tips">
-        {/* Breadcrumb */}
-        <section id="breadcrumb">
-          <div className="container text-left">
-            <ol className="breadcrumb">
-              <li>
-                <Link to="/">Dashboard</Link>
-              </li>
-              <li className="active">Tips</li>
-            </ol>
+    const fixtures = this.filterFixtures();
+    const fixtureRound = fixtures.map((fixture, index) => {
+      //console.log(fixture);
+      return (
+        <div key={index} className="tipping-row">
+          <div className="squad home-squad">
+            <div className="radio home-radio">
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "home"}
+                  onChange={this.selectHomeTeam}
+                />
+              </label>
+            </div>
+            <div className="home-name">{fixture.home}</div>
+            <div className="home-logo" />
+            <div className="home-score"> {fixture.resulthome}</div>
           </div>
-        </section>
+          <div className="game-details text-center">
+            <div className="game-date">
+              {fixture.day}
+              {"  "}
+              {fixture.date}
+            </div>
+            <div className="game-time">{fixture.time}</div>
+            <div className="game-venue">{fixture.stadium}</div>
+          </div>
+          <div className="squad away-squad text-right">
+            <div className="away-score">{fixture.resultaway}</div>
+            <div className="away-logo" />
+            <div className="away-name">{fixture.away}</div>
+            <div className="radio away-radio">
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "away"}
+                  onChange={this.selectAwayTeam}
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      );
+    });
 
-        {/* Main Section */}
-        <section id="main">
-          <div className="container">
-            <div className="row">
-              <SideTable />
+    let rounds = [];
+    // Collect all rounds
+    const allRounds = this.state.fixtures.map(fixture => {
+      return fixture.round;
+    });
 
-              {/* Main Section */}
-              <div className="col-md-9">
-                {/* Week One Tips */}
-                <div className="panel panel-default">
-                  <div className="panel-heading main-color-bg">
-                    <h3 className="panel-title">Week One Tips</h3>
-                  </div>
+    // Remove duplicates (1)
+    allRounds.forEach(round => {
+      if (rounds.indexOf(round) === -1) {
+        rounds.push(round);
+      }
+    });
+    console.log(rounds);
 
-                  <div className="panel-body">
-                    {/* Tipping Container */}
-                    <div className="tipping-container">
-                      {/* Select Round Form */}
-                      <div className="form-group">
-                        {/* Select Label */}
-                        <div className="select-round-label text-right">
-                          <label>Select Round: </label>
-                        </div>
-                        {/* Drop-Down Menu*/}
-                        <div className="select-form-control">
-                          <select className="form-control">
-                            <option value="round 1">Round 1</option>
-                            <option value="round 2">Round 2</option>
-                            <option value="round 3">Round 3</option>
-                            <option value="round 4">Round 4</option>
-                            <option value="round 5">Round 5</option>
-                            <option value="round 6">Round 6</option>
-                            <option value="round 7">Round 7</option>
-                            <option value="round 8">Round 8</option>
-                            <option value="round 9">Round 9</option>
-                            <option value="round 10">Round 10</option>
-                            <option value="round 11">Round 11</option>
-                            <option value="round 11">Round 11</option>
-                            <option value="round 12">Round 12</option>
-                            <option value="round 13">Round 13</option>
-                            <option value="round 14">Round 14</option>
-                            <option value="round 15">Round 15</option>
-                            <option value="round 16">Round 16</option>
-                            <option value="round 17">Round 17</option>
-                            <option value="round 18">Round 18</option>
-                            <option value="round 19">Round 19</option>
-                            <option value="round 20">Round 20</option>
-                            <option value="round 21">Round 21</option>
-                            <option value="round 22">Round 22</option>
-                            <option value="round 23">Round 23</option>
-                            <option value="round 24">Round 24</option>
-                            <option value="round 25">Round 25</option>
-                            <option value="round 26">Round 26</option>
-                            <option value="finals week 1">Finals Week 1</option>
-                            <option value="finals week 2">Finals Week 2</option>
-                            <option value="finals week 3">Finals Week 3</option>
-                            <option value="grand final">Grand Final</option>
-                          </select>
-                        </div>
-                      </div>
+    // Remove duplicates (2)
+    // let rounds2 = new Set(allRounds);
+    // console.log(rounds2);
 
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-
-                      {/* Tipping Row */}
-                      <div className="tipping-row">
-                        <div className="squad home-squad">
-                          <div className="radio home-radio" />
-                          <div className="home-name">Dragons</div>
-                          <div className="home-logo" />
-                          <div className="home-score">20</div>
-                        </div>
-
-                        <div className="game-details text-center">
-                          <div className="game-date">Thurs 28th June</div>
-                          <div className="game-time">7:50PM</div>
-                          <div className="game-venue">WIN Stadium</div>
-                        </div>
-
-                        <div className="squad away-squad text-right">
-                          <div className="away-score">18</div>
-                          <div className="away-logo" />
-                          <div className="away-name">Eels</div>
-                          <div className="radio away-radio" />
-                        </div>
-                      </div>
-                      {/* End of Tipping Row */}
-
-                      {/* Submit Button */}
-                      <div className="submit-button text-right">
-                        <button type="submit" className="btn btn-default">
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                    {/* End of Tipping Container */}
-                  </div>
-                </div>
+    return (
+      <div className="col-md-9">
+        <div className="panel panel-default">
+          {/* Heading */}
+          <div className="panel-heading main-color-bg">
+            <h3 className="panel-title">Latest Tips</h3>
+          </div>
+          {/* Tipping Container */}
+          <div className="panel-body">
+            <div className="tipping-container">
+              {/* Select Round */}
+              <div className="form-group select-round">
+                <label htmlFor="gender">Select Round</label>
+                <select
+                  className="form-control text-right"
+                  id="selectRound"
+                  onChange={this.selectRound}
+                  value={this.state.selectedRound}
+                >
+                  {rounds.map((round, index) => (
+                    <option
+                      key={index}
+                      className={
+                        this.state.selectedRound === round ? "selected" : ""
+                      }
+                    >
+                      {round}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {/* Fixture Round */}
+              {fixtureRound}
+              {/* Submit Button */}
+              <div className="submit-button text-right">
+                <button
+                  onClick={this.onSubmitTip}
+                  type="submit"
+                  className="btn btn-default"
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     );
   }

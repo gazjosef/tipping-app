@@ -81,7 +81,6 @@ class TippingContainer extends Component {
   };
 
   render() {
-    console.log(this.state);
     const fixtures = this.filterFixtures();
     const fixtureRound = fixtures.map((fixture, index) => {
       //console.log(fixture);
@@ -133,19 +132,22 @@ class TippingContainer extends Component {
     });
 
     let rounds = [];
-
+    // Collect all rounds
     const allRounds = this.state.fixtures.map(fixture => {
       return fixture.round;
     });
-    console.log(allRounds);
 
-    // Remove duplicates
+    // Remove duplicates (1)
     allRounds.forEach(round => {
       if (rounds.indexOf(round) === -1) {
         rounds.push(round);
       }
     });
     console.log(rounds);
+
+    // Remove duplicates (2)
+    // let rounds2 = new Set(allRounds);
+    // console.log(rounds2);
 
     return (
       <div className="TippingContainer">
