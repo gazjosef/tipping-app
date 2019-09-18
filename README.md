@@ -13,9 +13,10 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 
 ## Built With
 
-- React
+- bcrypt
 - NodeJS/Express
 - PostgreSQL
+- React
 
 ## GitHub Page
 
