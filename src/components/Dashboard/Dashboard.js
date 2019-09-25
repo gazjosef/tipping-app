@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SideTable from "../SideTable/SideTable";
-import Comp from "../Comp/Comp";
-import TippingContainer from "../Tips/TippingContainer";
+// import Comp from "../Comp/Comp";
+// import TippingContainer from "../Tips/TippingContainer";
 import Tips from "../Tips/Tips";
 
 class Main extends Component {
