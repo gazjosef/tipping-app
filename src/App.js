@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import NavBar from "./components/NavBar/NavBar";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import NavBar from "./components/Layout/NavBar/NavBar";
+import Header from "./components/Layout/Header/Header";
+import Footer from "./components/Layout/Footer/Footer";
 
-import Dashboard from "./components/Dashboard/Dashboard";
-import Signin from "./components/Signin/Signin";
-import Register from "./components/Register/Register";
-
-/*
-import Tips from "./components/Tips/Tips";
-*/
+import Dashboard from "./components/Layout/Dashboard/Dashboard";
+import Signin from "./components/Pages/Signin/Signin";
+import Register from "./components/Pages/Register/Register";
 
 class App extends Component {
   constructor() {

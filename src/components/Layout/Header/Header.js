@@ -4,7 +4,6 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      {/* Header */}
       <header id="header">
         <div className="container">
           <div className="row text-left">
