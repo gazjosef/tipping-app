@@ -26,6 +26,17 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
               </Link>
             </div>
             <div id="navbar" className="collapse navbar-collapse">
+              <ul className="nav navbar-nav">
+                <li>
+                  <Link to="/">Tips</Link>
+                </li>
+                <li>
+                  <Link to="/comp">Comp</Link>
+                </li>
+                {/* <li>
+                  <Link to="/settings">Settings</Link>
+                </li> */}
+              </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li>
                   <Link to="/">Welcome, {name}</Link>

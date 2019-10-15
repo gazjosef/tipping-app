@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
+    <Fragment>
       <header id="header">
         <div className="container">
           <div className="row text-left">
@@ -16,7 +16,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </div>
+    </Fragment>
   );
 };
 
