@@ -7,9 +7,9 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 ## How to use
 
 1. Register by supplying a name, email and password.
-2. Select round to tip
+2. Select Round from the schedule to tip.
 3. Select tip by choosing between home and away teams for each fixture.
-4. Submit
+4. Click Submit
 
 ## Built With
 
@@ -17,6 +17,11 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 - NodeJS/Express
 - PostgreSQL
 - React
+
+## Further things to add
+- Comp table
+- Editable tip selection
+- Additional sport schedules - AFL, Super Rugby
 
 ## GitHub Page
 
