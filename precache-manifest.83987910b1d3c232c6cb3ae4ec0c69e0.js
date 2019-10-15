@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "b3e9303da525ee984026",
-    "url": "/tipping-app/static/css/main.94b2c579.chunk.css"
+    "revision": "a1074f0b32e487feef12",
+    "url": "/tipping-app/static/css/main.6f563a4e.chunk.css"
   },
   {
-    "revision": "b3e9303da525ee984026",
-    "url": "/tipping-app/static/js/main.861e6dcd.chunk.js"
+    "revision": "a1074f0b32e487feef12",
+    "url": "/tipping-app/static/js/main.6cd0d96f.chunk.js"
   },
   {
     "revision": "b8cb3995c2e48e2565ea",
     "url": "/tipping-app/static/js/runtime~main.71602086.js"
   },
   {
-    "revision": "0631c7c73c574a32c023",
+    "revision": "9058478b0e06fdc37fde",
     "url": "/tipping-app/static/css/2.999c190b.chunk.css"
   },
   {
-    "revision": "0631c7c73c574a32c023",
-    "url": "/tipping-app/static/js/2.25f8ee37.chunk.js"
+    "revision": "9058478b0e06fdc37fde",
+    "url": "/tipping-app/static/js/2.0b8abefa.chunk.js"
   },
   {
     "revision": "fa2772327f55d8198301fdb8bcfc8158",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/tipping-app/static/media/glyphicons-halflings-regular.89889688.svg"
   },
   {
-    "revision": "9f7f913885084bd61d0ac7ac16c9ce20",
+    "revision": "ab0cbba67f7c67d8b1f6646da6e196af",
     "url": "/tipping-app/index.html"
   }
 ];
