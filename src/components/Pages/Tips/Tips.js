@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import "./TippingContainer.css";
+import "./Tips.css";
 
 class Tips extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fixtures: [],
-      selectedRound: ""
-    };
-  }
+  state = {
+    fixtures: [],
+    selectedRound: ""
+  };
 
   componentDidMount() {
     fetch("https://tipping-app-api.herokuapp.com/fixtures", {
@@ -17,7 +14,7 @@ class Tips extends Component {
     })
       .then(response => response.json())
       .then(fixtures => {
-        console.log("fixtures: ", fixtures);
+        // console.log("fixtures: ", fixtures);
         this.setState({
           fixtures: fixtures
         });
@@ -44,7 +41,6 @@ class Tips extends Component {
 
   selectRound = event => {
     console.log("round selected");
-    // console.log(event.target.value);
     this.setState({
       selectedRound: event.target.value
     });
@@ -83,7 +79,6 @@ class Tips extends Component {
   render() {
     const fixtures = this.filterFixtures();
     const fixtureRound = fixtures.map((fixture, index) => {
-      //console.log(fixture);
       return (
         <div key={index} className="tipping-row">
           <div className="squad home-squad">
@@ -143,7 +138,7 @@ class Tips extends Component {
         rounds.push(round);
       }
     });
-    console.log(rounds);
+    // console.log(rounds);
 
     // Remove duplicates (2)
     // let rounds2 = new Set(allRounds);

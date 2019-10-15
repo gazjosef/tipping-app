@@ -1,10 +1,8 @@
-/* Breadcrumb */
-
 .breadcrumb {
   background: #ccc; /* Grey */
   color: #333; /* Very Dark Grey */
 }
 
 .breadcrumb a {
-  color: #333; /* Very Dark Grey */
+  color: #333;
 }

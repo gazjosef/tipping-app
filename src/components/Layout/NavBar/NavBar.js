@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = ({ onRouteChange, name, isSignedIn }) => {
   if (isSignedIn) {
     return (
-      <div className="NavBar">
+      <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">
@@ -39,11 +39,11 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
             </div>
           </div>
         </nav>
-      </div>
+      </Fragment>
     );
   } else {
     return (
-      <div className="NavBar">
+      <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">
@@ -79,7 +79,7 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
             </div>
           </div>
         </nav>
-      </div>
+      </Fragment>
     );
   }
 };

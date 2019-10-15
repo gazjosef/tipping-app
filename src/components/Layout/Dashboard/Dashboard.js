@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import SideTable from "../SideTable/SideTable";
 // import Comp from "../Comp/Comp";
@@ -6,7 +6,7 @@ import Tips from "../../Pages/Tips/Tips";
 
 const Main = () => {
   return (
-    <div className="Dashboard">
+    <Fragment>
       {/* Main */}
       <section id="main">
         <div className="container">
@@ -18,7 +18,7 @@ const Main = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Fragment>
   );
 };
 export default Main;

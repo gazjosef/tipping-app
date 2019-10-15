@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Breadcrumb.css";
 
 const Breadcrumb = () => {
   return (
-    <div className="Breadcrumb">
+    <Fragment>
       <section id="breadcrumb">
         <div className="container text-left">
           <ol className="breadcrumb">
@@ -11,7 +11,7 @@ const Breadcrumb = () => {
           </ol>
         </div>
       </section>
-    </div>
+    </Fragment>
   );
 };
 
