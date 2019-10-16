@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tipping-app/precache-manifest.2d8a345f82fcff0e2479411b36e88a4b.js"
+  "/tipping-app/precache-manifest.83987910b1d3c232c6cb3ae4ec0c69e0.js"
 );
 
 workbox.clientsClaim();

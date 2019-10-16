@@ -22,6 +22,7 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 
 - Alert spinner
 - Comp table
+- Context API
 - Editable tip selection
 - Additional sport schedules - AFL, Super Rugby
 
