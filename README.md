@@ -11,6 +11,11 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 3. Select Tip by choosing between home and away teams for each fixture.
 4. Click Submit
 
+or.
+
+1. Sign in with username "brad@gmail.com"
+2. Password "123"
+
 ## Built With
 
 - bcrypt
