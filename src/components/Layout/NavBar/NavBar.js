@@ -8,7 +8,7 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
       <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
-            <div className="navbar-header">
+            {/* <div className="navbar-header">
               <button
                 type="button"
                 className="navbar-toggle collapsed"
@@ -24,22 +24,17 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
               <Link to="/" className="navbar-brand">
                 FootyTips
               </Link>
-            </div>
+            </div> */}
             <div id="navbar" className="collapse navbar-collapse">
-              <ul className="nav navbar-nav">
+              <ul className="nav navbar-nav navbar-right">
+                <li>
+                  <Link to="/">Welcome, {name}</Link>
+                </li>
                 <li>
                   <Link to="/">Tips</Link>
                 </li>
                 <li>
                   <Link to="/comp">Comp</Link>
-                </li>
-                {/* <li>
-                  <Link to="/settings">Settings</Link>
-                </li> */}
-              </ul>
-              <ul className="nav navbar-nav navbar-right">
-                <li>
-                  <Link to="/">Welcome, {name}</Link>
                 </li>
                 <li>
                   <Link to="/" onClick={() => onRouteChange("Signout")}>
@@ -57,7 +52,7 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
       <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
-            <div className="navbar-header">
+            {/* <div className="navbar-header">
               <button
                 type="button"
                 className="navbar-toggle collapsed"
@@ -73,7 +68,7 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
               <Link to="/" className="navbar-brand">
                 FootyTips
               </Link>
-            </div>
+            </div> */}
             <div id="navbar" className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                 <li>

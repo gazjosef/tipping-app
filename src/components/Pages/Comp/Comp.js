@@ -53,17 +53,17 @@ class Comp extends Component {
 
     let compTable = [];
 
-    this.state.users.forEach(user => {
-      let compScore = {
-        name: user.name,
-        email: user.email,
-        wins: 0,
-        losses: 0,
-        paid: ""
-      };
-      compTable.push(compScore);
-    });
-    console.log(compTable);
+    // this.state.users.forEach(user => {
+    //   let compScore = {
+    //     name: user.name,
+    //     email: user.email,
+    //     wins: 0,
+    //     losses: 0,
+    //     paid: ""
+    //   };
+    //   compTable.push(compScore);
+    // });
+    // console.log(compTable);
 
     const compRow = compTable.map((user, index) => {
       return (

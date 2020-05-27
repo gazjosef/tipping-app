@@ -13,6 +13,8 @@ const Main = () => {
           <div className="container">
             <div className="row">
               <SideTable />
+              {/* <Tips />
+              <Comp /> */}
               <Switch>
                 <Route exact path="/" component={Tips} />
                 <Route exact path="/comp" component={Comp} />
