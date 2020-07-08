@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import SideTable from "../SideTable/SideTable";
-import Comp from "../../Pages/Comp/Comp";
-import Tips from "../../Pages/Tips/Tips";
+import SideTable from '../SideTable/SideTable';
+import Comp from '../../Pages/Comp/Comp';
+import Tips from '../../Pages/Tips/Tips';
 
 const Main = () => {
   return (
@@ -13,8 +13,6 @@ const Main = () => {
           <div className="container">
             <div className="row">
               <SideTable />
-              {/* <Tips />
-              <Comp /> */}
               <Switch>
                 <Route exact path="/" component={Tips} />
                 <Route exact path="/comp" component={Comp} />
