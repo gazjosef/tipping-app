@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import "./Footer.css";
+import React, { Fragment } from 'react';
+import './Footer.css';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Fragment>
       <footer id="footer">
@@ -10,4 +10,3 @@ const Footer = () => {
     </Fragment>
   );
 };
-export default Footer;

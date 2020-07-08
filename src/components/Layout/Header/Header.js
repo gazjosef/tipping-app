@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import "./Header.css";
+import React, { Fragment } from 'react';
+import './Header.css';
 
-const Header = () => {
+export const Header = () => {
   return (
     <Fragment>
       <header id="header">
@@ -9,7 +9,7 @@ const Header = () => {
           <div className="row text-left">
             <div className="col-md-12">
               <h1>
-                <i className="fas fa-football-ball" /> Footy Tips{" "}
+                <i className="fas fa-football-ball" /> Footy Tips{' '}
                 <small>NRL</small>
               </h1>
             </div>
@@ -19,5 +19,3 @@ const Header = () => {
     </Fragment>
   );
 };
-
-export default Header;

@@ -1,48 +1,48 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
 // LAYOUT
-import NavBar from "./components/Layout/NavBar/NavBar";
-import Header from "./components/Layout/Header/Header";
-import Footer from "./components/Layout/Footer/Footer";
-import Dashboard from "./components/Layout/Dashboard/Dashboard";
+import { NavBar } from './components/Layout/NavBar/NavBar';
+import { Header } from './components/Layout/Header/Header';
+import { Footer } from './components/Layout/Footer/Footer';
+import Dashboard from './components/Layout/Dashboard/Dashboard';
 
 // PAGES
-import Signin from "./components/Pages/Signin/Signin";
-import Register from "./components/Pages/Register/Register";
+import Signin from './components/Pages/Signin/Signin';
+import Register from './components/Pages/Register/Register';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: "Signin",
+      route: 'Signin',
       isSignedIn: false,
       user: {
-        id: "",
-        name: "",
-        email: "",
+        id: '',
+        name: '',
+        email: '',
         entries: 0,
-        joined: ""
-      }
+        joined: '',
+      },
     };
   }
 
-  loadUser = data => {
+  loadUser = (data) => {
     this.setState({
       user: {
         id: data.id,
         name: data.name,
         email: data.email,
         entries: data.entries,
-        joined: data.joined
-      }
+        joined: data.joined,
+      },
     });
   };
 
-  onRouteChange = route => {
-    if (route === "Signout") {
+  onRouteChange = (route) => {
+    if (route === 'Signout') {
       this.setState({ isSignedIn: false });
-    } else if (route === "Dashboard") {
+    } else if (route === 'Dashboard') {
       this.setState({ isSignedIn: true });
     }
     this.setState({ route: route });
@@ -59,9 +59,9 @@ class App extends Component {
         />
         <Header />
 
-        {route === "Dashboard" ? (
+        {route === 'Dashboard' ? (
           <Dashboard />
-        ) : route === "Signin" ? (
+        ) : route === 'Signin' ? (
           <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
           <Register

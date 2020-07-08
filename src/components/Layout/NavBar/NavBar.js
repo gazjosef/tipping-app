@@ -1,30 +1,13 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import "./NavBar.css";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = ({ onRouteChange, name, isSignedIn }) => {
+export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
   if (isSignedIn) {
     return (
       <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
-            {/* <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar"
-                aria-controls="navbar"
-              >
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-              </button>
-              <Link to="/" className="navbar-brand">
-                FootyTips
-              </Link>
-            </div> */}
             <div id="navbar" className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                 <li>
@@ -37,7 +20,7 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
                   <Link to="/comp">Comp</Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => onRouteChange("Signout")}>
+                  <Link to="/" onClick={() => onRouteChange('Signout')}>
                     Sign Out
                   </Link>
                 </li>
@@ -52,32 +35,15 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
       <Fragment>
         <nav className="navbar navbar-default">
           <div className="container">
-            {/* <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar"
-                aria-controls="navbar"
-              >
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-              </button>
-              <Link to="/" className="navbar-brand">
-                FootyTips
-              </Link>
-            </div> */}
             <div id="navbar" className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link to="/" onClick={() => onRouteChange("Signin")}>
+                  <Link to="/" onClick={() => onRouteChange('Signin')}>
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => onRouteChange("Register")}>
+                  <Link to="/" onClick={() => onRouteChange('Register')}>
                     Register
                   </Link>
                 </li>
@@ -90,4 +56,4 @@ const NavBar = ({ onRouteChange, name, isSignedIn }) => {
   }
 };
 
-export default NavBar;
+// export default NavBar;
