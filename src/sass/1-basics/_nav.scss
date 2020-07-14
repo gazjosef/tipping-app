@@ -27,6 +27,10 @@
   border-color: #e7e7e7;
 }
 
+.navbar-nav {
+  margin: 7.5px -15px;
+}
+
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
@@ -37,5 +41,10 @@
     border-top: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+  }
+
+  .navbar-right {
+    float: right !important;
+    margin-right: -15px;
   }
 }
