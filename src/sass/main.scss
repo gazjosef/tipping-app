@@ -2,6 +2,9 @@
 @import '1-basics/variables';
 @import '1-basics/functions';
 @import '1-basics/mixins';
+@import '1-basics/elements';
+@import '1-basics/nav';
 
 // 2-layouts
-@import "./2-layout/navBar"
+@import "./2-layout/navBar";
+@import "./2-layout/header"
