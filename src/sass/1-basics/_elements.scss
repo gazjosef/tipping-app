@@ -14,16 +14,12 @@
   margin-left: -15px;
 }
 
-.text-left {
-  text-align: left;
+.text-center {
+  text-align: center;
 }
 
-.col-md-3,
-.col-md-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+.text-left {
+  text-align: left;
 }
 
 @media (min-width: 768px) {
