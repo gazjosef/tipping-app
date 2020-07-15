@@ -24,4 +24,5 @@ const Main = () => {
     </Fragment>
   );
 };
+
 export default Main;
