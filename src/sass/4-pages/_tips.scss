@@ -1,0 +1,62 @@
+.tipping-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tipping-row {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background: #f4f4f4;
+  margin-top: 10px;
+  border: 1px #ccc solid;
+}
+
+.squad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.home-squad,
+.home-radio,
+.home-name,
+.home-logo,
+.home-score,
+.game-details,
+.game-date,
+.game-time,
+.game-venue,
+.away-squad,
+.away-score,
+.away-logo,
+.away-name,
+.away-radio,
+.select-round-label,
+.select-form-control {
+  flex: 1;
+}
+
+.game-details {
+  /* order: 2; */
+  padding: 10px;
+}
+
+.game-date,
+.game-time,
+.game-venue {
+  font-size: 12px;
+  /* background: #f4f4f4; */
+}
+
+.submit-button {
+  margin-top: 10px;
+}
+
+.select-round {
+  width: 300px;
+  margin-right: 20px;
+}
