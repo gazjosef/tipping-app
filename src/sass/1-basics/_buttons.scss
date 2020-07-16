@@ -71,6 +71,11 @@
   border-color: #122b40;
 }
 
+.btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+
 // Button Danger
 
 .btn-danger {
@@ -93,12 +98,18 @@
 }
 
 .btn-danger:active,
-.btn-danger.active,
-.open>.dropdown-toggle.btn-danger {
+.btn-danger.active {
   color: #fff;
   background-color: #c9302c;
   border-color: #ac2925;
 }
+
+.btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+
+// Button Success
 
 // Button Warning
 
