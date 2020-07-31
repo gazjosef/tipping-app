@@ -21,7 +21,8 @@ or.
 - bcrypt
 - NodeJS/Express
 - PostgreSQL
-- React
+- [![React](https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png)](https://facebook.github.io/react/)
+ React
 
 ## Further things to add
 
