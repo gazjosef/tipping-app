@@ -1,42 +1,42 @@
-import React from "react";
+import React, { Component } from 'react';
 
-class Register extends React.Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: '',
     };
   }
 
-  onNameChange = event => {
+  onNameChange = (event) => {
     this.setState({ name: event.target.value });
   };
 
-  onEmailChange = event => {
+  onEmailChange = (event) => {
     this.setState({ email: event.target.value });
   };
 
-  onPasswordChange = event => {
+  onPasswordChange = (event) => {
     this.setState({ password: event.target.value });
   };
 
   onSubmitSignIn = () => {
-    fetch("https://tipping-app-api.herokuapp.com/register", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://tipping-app-api.herokuapp.com/register', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password
-      })
+        password: this.state.password,
+      }),
     })
-      .then(response => response.json())
-      .then(user => {
+      .then((response) => response.json())
+      .then((user) => {
         if (user) {
           this.props.loadUser(user);
-          this.props.onRouteChange("Dashboard");
+          this.props.onRouteChange('Dashboard');
         }
       });
   };
