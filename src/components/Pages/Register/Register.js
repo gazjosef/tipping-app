@@ -1,56 +1,50 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react'
 
-class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
+export const Register = (props) => {
+    const [ name, setName ] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+
+    const onNameChange = (event) => {
+        setName(event.target.value)
     };
-  }
+    
+    const onEmailChange = (event) => {
+        setEmail(event.target.value)
+    };
+    
+    const onPasswordChange = (event) => {
+        setPassword(event.target.value)
+    };
 
-  onNameChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
+    const onSubmitSignIn = () => {
+        fetch('https://tipping-app-api.herokuapp.com/register', {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password,
+          }),
+        })
+          .then((response) => response.json())
+          .then((user) => {
+            if (user) {
+              props.loadUser(user);
+              props.onRouteChange('Dashboard');
+            }
+          });
+    };
 
-  onEmailChange = (event) => {
-    this.setState({ email: event.target.value });
-  };
-
-  onPasswordChange = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  onSubmitSignIn = () => {
-    fetch('https://tipping-app-api.herokuapp.com/register', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((user) => {
-        if (user) {
-          this.props.loadUser(user);
-          this.props.onRouteChange('Dashboard');
-        }
-      });
-  };
-
-  render() {
     return (
-      <div className="container">
+        <div className="container">
         <div className="form-signin">
           <h2 className="form-signin-heading">Register</h2>
 
           <div className="form-group">
             <label htmlFor="inputName">Name</label>
             <input
-              onChange={this.onNameChange}
+              onChange={onNameChange}
               type="text"
               id="inputName"
               name="name"
@@ -64,7 +58,7 @@ class Register extends Component {
           <div className="form-group">
             <label htmlFor="inputEmail">Email address</label>
             <input
-              onChange={this.onEmailChange}
+              onChange={onEmailChange}
               type="email"
               id="inputEmail"
               className="form-control"
@@ -77,7 +71,7 @@ class Register extends Component {
           <div className="form-group">
             <label htmlFor="inputPassword">Password</label>
             <input
-              onChange={this.onPasswordChange}
+              onChange={onPasswordChange}
               type="password"
               id="inputPassword"
               className="form-control"
@@ -109,7 +103,7 @@ class Register extends Component {
           </div> */}
 
           <button
-            onClick={this.onSubmitSignIn}
+            onClick={onSubmitSignIn}
             className="btn btn-lg btn-primary btn-block pointer"
             type="submit"
             value="register"
@@ -118,8 +112,5 @@ class Register extends Component {
           </button>
         </div>
       </div>
-    );
-  }
+    )
 }
-
-export default Register;

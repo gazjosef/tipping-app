@@ -5,11 +5,11 @@ import './App.css';
 import { NavBar } from './components/Layout/NavBar/NavBar';
 import { Header } from './components/Layout/Header/Header';
 import { Footer } from './components/Layout/Footer/Footer';
-import Dashboard from './components/Layout/Dashboard/Main';
 
 // PAGES
-import Signin from './components/Pages/Signin/Signin';
-import Register from './components/Pages/Register/Register';
+import { Signin } from './components/Pages/Signin/Signin';
+import { Register } from './components/Pages/Register/Register';
+import { Home } from './components/Pages/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -60,7 +60,7 @@ class App extends Component {
         <Header />
 
         {route === 'Dashboard' ? (
-          <Dashboard />
+          <Home />
         ) : route === 'Signin' ? (
           <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
         ) : (
