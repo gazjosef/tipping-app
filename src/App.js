@@ -57,6 +57,7 @@ class App extends Component {
           name={this.state.user.name}
           onRouteChange={this.onRouteChange}
         />
+
         <Header />
 
         {route === 'Dashboard' ? (
@@ -69,6 +70,7 @@ class App extends Component {
             onRouteChange={this.onRouteChange}
           />
         )}
+        
         <Footer />
       </div>
     );

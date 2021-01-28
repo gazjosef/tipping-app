@@ -14,14 +14,29 @@ export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
                   <Link to="/">Welcome, {name}</Link>
                 </li>
                 <li>
-                  <Link to="/">Tips</Link>
+                  <Link to="/tips">Tips</Link>
                 </li>
                 <li>
-                  <Link to="/comp" onClick={() => onRouteChange('Comp')}>Comp</Link>
+                  <Link 
+                    to="/comp" 
+                    // onClick={() => onRouteChange('Comp')}
+                    >
+                      Comp
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => onRouteChange('Signout')}>
-                    Sign Out
+                  <Link 
+                    to="/settings" 
+                    // onClick={() => onRouteChange('Settings')}
+                    >
+                      Settings
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/" 
+                    onClick={() => onRouteChange('Signout')}>
+                      Sign Out
                   </Link>
                 </li>
               </ul>
