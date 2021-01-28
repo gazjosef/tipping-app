@@ -90,6 +90,7 @@ class SideTable extends Component {
         </tr>
       );
     });
+    console.log(this.state.fixtures);
     return (
       <div className="SideTable">
         {/* Side Table */}

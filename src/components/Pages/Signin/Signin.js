@@ -15,8 +15,6 @@ export const Signin = (props) => {
       };
     
     const onSubmitSignIn = () => {
-        console.log('email: ', signInEmail)
-        console.log('pass:', signInPassword)
         fetch("https://tipping-app-api.herokuapp.com/signin", {
           method: "post",
           headers: { "Content-Type": "application/json" },
