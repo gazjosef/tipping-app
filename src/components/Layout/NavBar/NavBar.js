@@ -1,18 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
-  console.log(name);
+  const [ userName, setUserName ] = useState()
+  useEffect(() => {
+    setUserName(name)
+  }, [])
+  console.log(userName);
   if (isSignedIn) {
     return (
-      <Fragment>
+      <>
         <nav className="navbar navbar-default">
           <div className="container">
             <div id="navbar" className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <Link to="/">Welcome, {name}</Link>
+                  <Link to="/">Welcome, {userName}</Link>
                 </li>
                 <li>
                   <Link 
@@ -25,11 +29,11 @@ export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
             </div>
           </div>
         </nav>
-      </Fragment>
+      </>
     );
   } else {
     return (
-      <Fragment>
+      <>
         <nav className="navbar navbar-default">
           <div className="container">
             <div id="navbar" className="collapse navbar-collapse">
@@ -48,9 +52,7 @@ export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
             </div>
           </div>
         </nav>
-      </Fragment>
+      </>
     );
   }
 };
-
-// export default NavBar;

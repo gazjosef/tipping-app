@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { useState } from 'react'
 
 // LAYOUT
 import { NavBar } from './components/Layout/NavBar/NavBar';
@@ -11,70 +10,65 @@ import { Signin } from './components/Pages/Signin/Signin';
 import { Register } from './components/Pages/Register/Register';
 import { Home } from './components/Pages/Home/Home';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      route: 'Signin',
-      isSignedIn: false,
+export const App = () => {
+  const [ route, setRoute ] = useState("Signin");
+  const [ signedIn, setSignedIn ] = useState(false);
+  const [ user, setUser ] = useState({
       user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: '',
-      },
-    };
-  }
+          id: '',
+          name: '',
+          email: '',
+          entries: 0,
+          joined: '',
+      }
+  });
 
-  loadUser = (data) => {
-    this.setState({
+  const loadUser = (data) => {
+    setUser({
       user: {
         id: data.id,
         name: data.name,
         email: data.email,
         entries: data.entries,
         joined: data.joined,
-      },
-    });
+      }
+    })
   };
 
-  onRouteChange = (route) => {
+  const onRouteChange = (route) => {
     if (route === 'Signout') {
-      this.setState({ isSignedIn: false });
+      setSignedIn(false)
     } else if (route === 'Dashboard') {
-      this.setState({ isSignedIn: true });
-    } 
-    this.setState({ route: route });
+      setSignedIn(true)
+    }
+    setRoute(route)
   };
 
-  render() {
-    const { isSignedIn, route } = this.state;
-    return (
-      <div className="App">
-        <NavBar
-          isSignedIn={isSignedIn}
-          name={this.state.user.name}
-          onRouteChange={this.onRouteChange}
-        />
+  return (
+    <div className="App">
+      <NavBar
+        isSignedIn={signedIn}
+        name={user.name}
+        onRouteChange={onRouteChange}
+      />
 
-        <Header />
+      <Header />
 
-        {route === 'Dashboard' ? (
-          <Home />
-        ) : route === 'Signin' ? (
-          <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
-        ) : (
-          <Register
-            loadUser={this.loadUser}
-            onRouteChange={this.onRouteChange}
-          />
-        )}
-        
-        <Footer />
-      </div>
-    );
-  }
+      {route === 'Dashboard' ? (
+      <Home />
+      ) : route === 'Signin' ? (
+      <Signin
+        loadUser={loadUser}
+        onRouteChange={onRouteChange}
+      />
+      ) : (
+      <Register
+        loadUser={loadUser}
+        onRouteChange={onRouteChange}
+      />
+      )}
+      
+      <Footer />
+    </div>
+  )
 }
-
-export default App;

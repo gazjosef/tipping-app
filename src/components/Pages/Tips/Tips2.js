@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./Tips.css";
 
-
 export const Tips2 = () => {
     const [fixtures, setFixtures] = useState([]);
     const [round, selectRound] = useState("");
@@ -15,9 +14,6 @@ export const Tips2 = () => {
             .then(fixtures => {
               // console.log("fixtures: ", fixtures);
               setFixtures(fixtures)
-            //   this.setState({
-            //     fixtures: fixtures
-            //   });
             });
             selectRound("Round 1")
     }, [])

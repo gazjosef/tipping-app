@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 export const Comp2 = () => {
-    const [ tips, setTips ] = useState();
+    const [ userTips, setUserTips ] = useState();
     // eslint-disable-next-line
     const [ users, setUsers ] = useState(["Dan","Kain","Rony","Sam","Tom","Gareth"]);
     const [ userTable, setUserTable ] = useState([]);
@@ -15,9 +15,7 @@ export const Comp2 = () => {
         .then(response => response.json())
         .then(tips => {
             console.log("tips: ", tips);
-            this.setState({
-            tips: tips
-            });
+            setUserTips(tips)
         });
         // Get Fixtures
         fetch("https://tipping-app-api.herokuapp.com/fixtures", {
@@ -95,10 +93,9 @@ export const Comp2 = () => {
                             }
                             </tbody>
                         </table>
-                        </div>
+                    </div>
                 </div>
             </div>
-           
         </section>
     )
 }

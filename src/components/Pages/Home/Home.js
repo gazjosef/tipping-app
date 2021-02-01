@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import SideTable from '../../Layout/SideTable/SideTable';
-import { SideTable2 } from "../../Layout/SideTable/SideTable2";
+import { SideTable } from "../../Layout/SideTable/SideTable";
 
 import Tips from '../../Pages/Tips/Tips';
 // import { Comp } from "../../Pages/Comp/Comp"
@@ -11,12 +10,11 @@ import Tips from '../../Pages/Tips/Tips';
 export const Home = () => {
     return (
         <>
-            <Router>
+            <Router>    
                 <section id="main">
                     <div className="container">
                         <div className="row">
-                        {/* <SideTable /> */}
-                        <SideTable2 />
+                        <SideTable />
                         <Switch>
                             <Route exact path="/" component={Tips} />
                             {/* <Route exact path="/comp" component={Comp} />
