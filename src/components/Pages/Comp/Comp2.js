@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export const Comp2 = () => {
     const [ tips, setTips ] = useState();
+    // eslint-disable-next-line
     const [ users, setUsers ] = useState(["Dan","Kain","Rony","Sam","Tom","Gareth"]);
     const [ userTable, setUserTable ] = useState([]);
 

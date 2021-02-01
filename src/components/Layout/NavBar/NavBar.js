@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
+  console.log(name);
   if (isSignedIn) {
     return (
       <Fragment>
@@ -12,25 +13,6 @@ export const NavBar = ({ onRouteChange, name, isSignedIn }) => {
               <ul className="nav navbar-nav navbar-right">
                 <li>
                   <Link to="/">Welcome, {name}</Link>
-                </li>
-                <li>
-                  <Link to="/tips">Tips</Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/comp" 
-                    // onClick={() => onRouteChange('Comp')}
-                    >
-                      Comp
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/settings" 
-                    // onClick={() => onRouteChange('Settings')}
-                    >
-                      Settings
-                  </Link>
                 </li>
                 <li>
                   <Link 

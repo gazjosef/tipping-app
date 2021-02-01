@@ -44,7 +44,7 @@ class App extends Component {
       this.setState({ isSignedIn: false });
     } else if (route === 'Dashboard') {
       this.setState({ isSignedIn: true });
-    }
+    } 
     this.setState({ route: route });
   };
 

@@ -2,19 +2,22 @@ import React, { useEffect, useState } from 'react'
 
 export const SideTable2 = () => {
     const [ fixtures, setFixtures ] = useState([]);
-    // const [ allTeamNames, setAllTeamNames ] = useState([]);
+    // eslint-disable-next-line
     const [ teamNames, setTeamNames ] = useState(["Broncos", "Knights", "Sharks", "Storm", "Roosters", "Rabbitohs", "Warriors", "Bulldogs", "Tigers", "Sea Eagles", "Cowboys", "Dragons", "Panthers", "Eels", "Titans", "Raiders"]);
     const [ leagueTable, setLeagueTable ] = useState([]);
     
     useEffect(() => {
-        fetch("https://tipping-app-api.herokuapp.com/table", {
+        async function getFixtures() {
+            const response = await fetch("https://tipping-app-api.herokuapp.com/table", {
                 method: "get",
                 headers: { "Content-Type": "application/json" }
             })
-            .then(response => response.json())
+            response.json()
             .then(fixtures => {
                 setFixtures(fixtures)
             });
+        }
+        getFixtures()
 
         teamNames.forEach(name => {
             let teamScore = {
@@ -29,45 +32,6 @@ export const SideTable2 = () => {
             };
 
             setLeagueTable((oldArray) => [...oldArray, teamScore])
-        });
-
-        fixtures.forEach(fixture => {
-            let homeTeam = leagueTable.find(team => team.name === fixture.home);
-            let awayTeam = leagueTable.find(team => team.name === fixture.away);
-
-            console.log("Home Team: ", homeTeam);
-            console.log("Away Team: ", awayTeam);
-        
-            setLeagueTable({...leagueTable, homeTeam: {
-                homePointsScored: fixture.result_home,
-                homePointsConceded: fixture.result_away
-            }});
-        
-            setLeagueTable({...leagueTable, awayTeam: {
-                awayPointsScored: fixture.result_away,
-                awayPointsConceded: fixture.result_home
-            }});
-        
-            // homeTeam.homePointsScored += +parseInt(fixture.result_home);
-            // homeTeam.homePointsConceded += +parseInt(fixture.result_away);
-            // awayTeam.awayPointsScored += +parseInt(fixture.result_away);
-            // awayTeam.awayPointsConceded += +parseInt(fixture.result_home);
-        
-            if (parseInt(fixture.result_home) > parseInt(fixture.result_away)) {
-
-            // setLeagueTable({...leagueTable, awayTeam: {
-            //     wins: fixture.result_away,
-            //     awayPointsConceded: fixture.result_home
-            // }});
-                homeTeam.wins += 1;
-                homeTeam.points += 2;
-                awayTeam.losses += 1;
-            }
-            if (parseInt(fixture.result_away) > parseInt(fixture.result_home)) {
-                awayTeam.wins += 1;
-                awayTeam.points += 2;
-                homeTeam.losses += 1;
-            }
         });
 
         // Sort league table by points
@@ -92,10 +56,8 @@ export const SideTable2 = () => {
         
     }, [])
 
-    
-
-    console.log(fixtures);
     console.log(leagueTable);
+    console.log(fixtures);
 
     return (
         <div className="SideTable">
