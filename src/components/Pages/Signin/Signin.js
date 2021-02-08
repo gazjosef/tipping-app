@@ -82,6 +82,16 @@ export const Signin = (props) => {
                     Register
                 </button>
 
+                <hr/>
+
+                <button
+                    onClick={() => props.onRouteChange("Register")}
+                    className="btn btn-lg btn-info btn-block"
+                    type="submit"
+                >
+                    Demo
+                </button>
+
                 {/*  
                 <div>
                     <p onClick={() => onRouteChange("Register")}>Register</p>
