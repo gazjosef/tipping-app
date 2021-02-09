@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export const Register = (props) => {
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
+    const [ sport, setSport ] = useState('');
     const [ password, setPassword ] = useState('');
 
     const onNameChange = (event) => {
@@ -11,6 +12,10 @@ export const Register = (props) => {
     
     const onEmailChange = (event) => {
         setEmail(event.target.value)
+    };
+    
+    const onSportChange = (event) => {
+        setSport(event.target.value)
     };
     
     const onPasswordChange = (event) => {
@@ -24,6 +29,7 @@ export const Register = (props) => {
           body: JSON.stringify({
             name: name,
             email: email,
+            sport: sport,
             password: password,
           }),
         })
@@ -63,6 +69,19 @@ export const Register = (props) => {
               id="inputEmail"
               className="form-control"
               placeholder="Enter email address"
+              required
+              autoFocus
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="inputSport">Sport</label>
+            <input
+              onChange={onSportChange}
+              type="text"
+              id="inputSport"
+              className="form-control"
+              placeholder="Enter sport"
               required
               autoFocus
             />
