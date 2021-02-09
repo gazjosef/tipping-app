@@ -29,29 +29,30 @@ export const Tips2 = () => {
       selectTeam(event.target.value, "away");
     };
   
-    selectTeam = (index, team) => {
-      let fixtures = this.state.fixtures;
+    const selectTeam = (index, team) => {
+      let fixtures = fixtures;
       fixtures[index].selection = team;
       this.setState({
         fixtures: fixtures
       });
     };
   
-    selectRound = event => {
+    const selectedRound = event => {
       console.log("round selected");
-      this.setState({
-        selectedRound: event.target.value
+      selectRound(event.target.value)
+      // this.setState({
+      //   selectedRound: event.target.value
+      // });
+    };
+  
+    const filterFixtures = () => {
+      return fixtures.filter((fixture, index) => {
+        return fixture.round === round;
       });
     };
   
-    filterFixtures = () => {
-      return this.state.fixtures.filter((fixture, index) => {
-        return fixture.round === this.state.selectedRound;
-      });
-    };
-  
-    onSubmitTip = () => {
-      let fixtures = this.filterFixtures();
+    const onSubmitTip = () => {
+      let fixtures = filterFixtures();
       for (let i = 0; i < fixtures.length; ++i) {
         let fixture = fixtures[i];
         let tip = {
@@ -74,9 +75,101 @@ export const Tips2 = () => {
       }
     };
 
+    // const fixtures = filterFixtures();
+    // const fixtureRound = fixtures.map((fixture, index) => {
+    //   return (
+    //     <div key={index} className="tipping-row">
+    //       <div className="squad home-squad">
+    //         <div className="radio home-radio">
+    //           <label htmlFor="">
+    //             <input
+    //               type="radio"
+    //               className="ml-2 mr-2"
+    //               value={index}
+    //               checked={fixture.selection === "home"}
+    //               onChange={selectHomeTeam}
+    //             />
+    //           </label>
+    //         </div>
+    //         <div className="home-name">{fixture.home}</div>
+    //         <div className="home-logo" />
+    //         <div className="home-score"> {fixture.resulthome}</div>
+    //       </div>
+    //       <div className="game-details text-center">
+    //         <div className="game-date">
+    //           {fixture.day}
+    //           {"  "}
+    //           {fixture.date}
+    //         </div>
+    //         <div className="game-time">{fixture.time}</div>
+    //         <div className="game-venue">{fixture.stadium}</div>
+    //       </div>
+    //       <div className="squad away-squad text-right">
+    //         <div className="away-score">{fixture.resultaway}</div>
+    //         <div className="away-logo" />
+    //         <div className="away-name">{fixture.away}</div>
+    //         <div className="radio away-radio">
+    //           <label htmlFor="">
+    //             <input
+    //               type="radio"
+    //               className="ml-2 mr-2"
+    //               value={index}
+    //               checked={fixture.selection === "away"}
+    //               onChange={selectAwayTeam}
+    //             />
+    //           </label>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   );
+    // });
+
     return (
-        <div>
-            
+      <div className="col-md-9">
+        <div className="panel panel-default">
+          {/* Heading */}
+          <div className="panel-heading main-color-bg">
+            <h3 className="panel-title">Latest Tips</h3>
+          </div>
+          {/* Tipping Container */}
+          <div className="panel-body">
+            <div className="tipping-container">
+              {/* Select Round */}
+              <div className="form-group select-round">
+                <label htmlFor="selectedRound">Select Round</label>
+                <select
+                  className="form-control text-right"
+                  id="selectedRound"
+                  onChange={selectedRound}
+                  // value={selectedRound}
+                >
+                  {/* {rounds.map((round, index) => (
+                    <option
+                      key={index}
+                      className={
+                        selectedRound === round ? "selected" : ""
+                      }
+                    >
+                      {round}
+                    </option>
+                  ))} */}
+                </select>
+              </div>
+              {/* Fixture Round */}
+              {/* {fixtureRound} */}
+              {/* Submit Button */}
+              <div className="submit-button text-right">
+                <button
+                  onClick={onSubmitTip}
+                  type="submit"
+                  className="btn btn-default"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+      )
 }
