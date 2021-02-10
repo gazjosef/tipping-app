@@ -6,17 +6,19 @@ export const Tips2 = () => {
     const [round, selectRound] = useState("Round 1");
 
     useEffect(() => {
-        fetch("https://tipping-app-api.herokuapp.com/fixtures", {
-            method: "get",
-            headers: { "Content-Type": "application/json" }
-          })
-            .then(response => response.json())
-            .then(data => {
-              // console.log("fixtures: ", fixtures);
-              setFixtures(data)
-              console.log(fixtures);
-            });
-            selectRound("Round 1")
+        async function getFixtures2() {
+          const response = await fetch("https://tipping-app-api.herokuapp.com/fixtures", {
+                method: "get",
+                headers: { "Content-Type": "application/json" }
+              })
+            
+            response.json()
+            .then(fixtures => {
+              setFixtures(fixtures)
+              console.table(fixtures);
+          });
+        }
+        getFixtures2()
     }, [])
 
     const selectHomeTeam = event => {
@@ -75,54 +77,54 @@ export const Tips2 = () => {
       }
     };
 
-    // const fixtures = filterFixtures();
-    // const fixtureRound = fixtures.map((fixture, index) => {
-    //   return (
-    //     <div key={index} className="tipping-row">
-    //       <div className="squad home-squad">
-    //         <div className="radio home-radio">
-    //           <label htmlFor="">
-    //             <input
-    //               type="radio"
-    //               className="ml-2 mr-2"
-    //               value={index}
-    //               checked={fixture.selection === "home"}
-    //               onChange={selectHomeTeam}
-    //             />
-    //           </label>
-    //         </div>
-    //         <div className="home-name">{fixture.home}</div>
-    //         <div className="home-logo" />
-    //         <div className="home-score"> {fixture.resulthome}</div>
-    //       </div>
-    //       <div className="game-details text-center">
-    //         <div className="game-date">
-    //           {fixture.day}
-    //           {"  "}
-    //           {fixture.date}
-    //         </div>
-    //         <div className="game-time">{fixture.time}</div>
-    //         <div className="game-venue">{fixture.stadium}</div>
-    //       </div>
-    //       <div className="squad away-squad text-right">
-    //         <div className="away-score">{fixture.resultaway}</div>
-    //         <div className="away-logo" />
-    //         <div className="away-name">{fixture.away}</div>
-    //         <div className="radio away-radio">
-    //           <label htmlFor="">
-    //             <input
-    //               type="radio"
-    //               className="ml-2 mr-2"
-    //               value={index}
-    //               checked={fixture.selection === "away"}
-    //               onChange={selectAwayTeam}
-    //             />
-    //           </label>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   );
-    // });
+    const newFixtures = filterFixtures();
+    const fixtureRound = newFixtures.map((fixture, index) => {
+      return (
+        <div key={index} className="tipping-row">
+          <div className="squad home-squad">
+            <div className="radio home-radio">
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "home"}
+                  onChange={selectHomeTeam}
+                />
+              </label>
+            </div>
+            <div className="home-name">{fixture.home}</div>
+            <div className="home-logo" />
+            <div className="home-score"> {fixture.resulthome}</div>
+          </div>
+          <div className="game-details text-center">
+            <div className="game-date">
+              {fixture.day}
+              {"  "}
+              {fixture.date}
+            </div>
+            <div className="game-time">{fixture.time}</div>
+            <div className="game-venue">{fixture.stadium}</div>
+          </div>
+          <div className="squad away-squad text-right">
+            <div className="away-score">{fixture.resultaway}</div>
+            <div className="away-logo" />
+            <div className="away-name">{fixture.away}</div>
+            <div className="radio away-radio">
+              <label htmlFor="">
+                <input
+                  type="radio"
+                  className="ml-2 mr-2"
+                  value={index}
+                  checked={fixture.selection === "away"}
+                  onChange={selectAwayTeam}
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      );
+    });
 
     return (
       <div className="col-md-9">
@@ -156,7 +158,7 @@ export const Tips2 = () => {
                 </select>
               </div>
               {/* Fixture Round */}
-              {/* {fixtureRound} */}
+              {fixtureRound}
               {/* Submit Button */}
               <div className="submit-button text-right">
                 <button

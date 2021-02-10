@@ -38,6 +38,7 @@ export const SideTable = () => {
         
     }, [])
 
+    console.log("ran now");
 
     fixtures.forEach(fixture => {
         let homeTeam = leagueTable.find(team => team.name === fixture.home);
