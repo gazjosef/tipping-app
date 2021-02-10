@@ -32,11 +32,10 @@ export const Tips2 = () => {
     };
   
     const selectTeam = (index, team) => {
-      let fixtures = fixtures;
+      // let fixtures = fixtures;
       fixtures[index].selection = team;
-      this.setState({
-        fixtures: fixtures
-      });
+      setFixtures(fixtures)
+      console.table(fixtures);
     };
   
     const selectedRound = event => {
@@ -126,6 +125,20 @@ export const Tips2 = () => {
       );
     });
 
+    let rounds = [];
+    // Collect all rounds
+    const allRounds = fixtures.map(fixture => {
+      return fixture.round;
+    });
+
+    allRounds.forEach(round => {
+      if (rounds.indexOf(round) === -1) {
+        rounds.push(round);
+      }
+    });
+
+    console.log(rounds);
+
     return (
       <div className="col-md-9">
         <div className="panel panel-default">
@@ -145,7 +158,7 @@ export const Tips2 = () => {
                   onChange={selectedRound}
                   // value={selectedRound}
                 >
-                  {/* {rounds.map((round, index) => (
+                  {rounds.map((round, index) => (
                     <option
                       key={index}
                       className={
@@ -154,7 +167,7 @@ export const Tips2 = () => {
                     >
                       {round}
                     </option>
-                  ))} */}
+                  ))}
                 </select>
               </div>
               {/* Fixture Round */}
