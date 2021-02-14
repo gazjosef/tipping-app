@@ -82,7 +82,10 @@ export const Results = () => {
         <div key={index} className="tipping-row">
           <div className="squad home-squad">
             <div className="radio home-radio">
-              <i class="fas fa-check"></i>
+              <span className="check">
+
+                <i class="fas fa-check"></i>
+              </span>
             </div>
             <div className="home-name">{fixture.home}</div>
             <div className="home-logo" />
@@ -102,7 +105,9 @@ export const Results = () => {
             <div className="away-logo" />
             <div className="away-name">{fixture.away}</div>
             <div className="radio away-radio">
-            <i class="fas fa-times"></i>
+              <span className="times">
+                <i class="fas fa-times"></i>
+              </span>
             </div>
           </div>
         </div>

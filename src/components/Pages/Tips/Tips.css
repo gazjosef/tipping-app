@@ -60,3 +60,11 @@
   width: 300px;
   margin-right: 20px;
 }
+
+.check {
+  color: green
+}
+
+.times {
+  color: red;
+}
