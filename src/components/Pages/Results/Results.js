@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./../Tips/Tips.css";
 
-export const Tips2 = () => {
+export const Results = () => {
     const [fixtures, setFixtures] = useState([]);
     const [round, selectRound] = useState("Round 1");
 
@@ -16,7 +16,7 @@ export const Tips2 = () => {
             .then(fixtures => {
               setFixtures(fixtures)
               console.table(fixtures);
-          });
+          }).catch(err => console.error(err));
         }
         getFixtures2()
     }, [])
@@ -82,15 +82,7 @@ export const Tips2 = () => {
         <div key={index} className="tipping-row">
           <div className="squad home-squad">
             <div className="radio home-radio">
-              <label htmlFor="">
-                <input
-                  type="radio"
-                  className="ml-2 mr-2"
-                  value={index}
-                  checked={fixture.selection === "home"}
-                  onChange={selectHomeTeam}
-                />
-              </label>
+              <i class="fas fa-check"></i>
             </div>
             <div className="home-name">{fixture.home}</div>
             <div className="home-logo" />
@@ -110,15 +102,7 @@ export const Tips2 = () => {
             <div className="away-logo" />
             <div className="away-name">{fixture.away}</div>
             <div className="radio away-radio">
-              <label htmlFor="">
-                <input
-                  type="radio"
-                  className="ml-2 mr-2"
-                  value={index}
-                  checked={fixture.selection === "away"}
-                  onChange={selectAwayTeam}
-                />
-              </label>
+            <i class="fas fa-times"></i>
             </div>
           </div>
         </div>
@@ -126,6 +110,7 @@ export const Tips2 = () => {
     });
 
     let rounds = [];
+
     // Collect all rounds
     const allRounds = fixtures.map(fixture => {
       return fixture.round;
@@ -144,7 +129,7 @@ export const Tips2 = () => {
         <div className="panel panel-default">
           {/* Heading */}
           <div className="panel-heading main-color-bg">
-            <h3 className="panel-title">Latest Tips</h3>
+            <h3 className="panel-title">Latest Results</h3>
           </div>
           {/* Tipping Container */}
           <div className="panel-body">
