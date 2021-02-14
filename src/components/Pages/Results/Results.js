@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Tips.css";
+import "./../Tips/Tips.css";
 
 export const Tips2 = () => {
     const [fixtures, setFixtures] = useState([]);
