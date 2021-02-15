@@ -71,11 +71,23 @@ export const Comp = () => {
                             <thead>
                             <tr>
                                 <th scope="col">P</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Last Week</th>
+                                <th scope="col">User</th>
+                                <th scope="col">R1</th>
+                                <th scope="col">R2</th>
+                                <th scope="col">R3</th>
+                                <th scope="col">R4</th>
+                                <th scope="col">R5</th>
+                                <th scope="col">R6</th>
+                                <th scope="col">R7</th>
+                                <th scope="col">R8</th>
+                                <th scope="col">R9</th>
+                                <th scope="col">R10</th>
+                                <th scope="col">R11</th>
+                                <th scope="col">R12</th>
+                                <th scope="col">R13</th>
+                                <th scope="col">R14</th>
+                                <th scope="col">R15</th>
                                 <th scope="col">Total</th>
-                                <th scope="col">Paid</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -85,10 +97,22 @@ export const Comp = () => {
                                         <tr key={index}>
                                             <th scope="row">{index + 1}</th>
                                             <td>{user.name}</td>
-                                            <td>{user.email}</td>
-                                            <td>{user.wins}</td>
-                                            <td>{user.losses}</td>
-                                            <td>{user.points}</td>
+                                            <td>5</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>6</td>
+                                            <td>5</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>3</td>
+                                            <td>8</td>
+                                            <td>6</td>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>7</td>
+                                            <td>50</td>
                                         </tr>
                                         );
                                 })

@@ -1,28 +1,66 @@
-import React from 'react'
+import React from 'react';
+import "./Settings.css"
 
 export const Settings = () => {
     return (
+        <section id="settings">
+            {/* <!-- Profile Settings--> */}
+            <div className="col-lg-8 pb-5">
+                <form className="row">
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <label htmlFor="account-fn">First Name</label>
+                            <input className="form-control" type="text" id="account-fn" value="Daniel" required="" />
+                        </div>
+                    </div>
 
-            <section id="settings">
-                <div className="col-md-9">
-                    <form>
+                    <div className="col-md-6">
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label htmlFor="account-ln">Last Name</label>
+                            <input className="form-control" type="text" id="account-ln" value="Adams" required="" />
                         </div>
+                    </div>
+                    
+                    <div className="col-md-6">
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <label htmlFor="account-email">E-mail Address</label>
+                            <input className="form-control" type="email" id="account-email" value="daniel.adams@example.com" disabled="" />
                         </div>
-                        <div className="form-check">
-                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                            <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <label htmlFor="account-phone">Phone Number</label>
+                            <input className="form-control" type="text" id="account-phone" value="+7 (805) 348 95 72" required="" />
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </section>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <label htmlFor="account-pass">New Password</label>
+                            <input className="form-control" type="password" id="account-pass" />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            <label htmlFor="account-confirm-pass">Confirm Password</label>
+                            <input className="form-control" type="password" id="account-confirm-pass" />
+                        </div>
+                    </div>
+                    <div className="col-12">
+                        <hr className="mt-2 mb-3" />
+                        <div className="d-flex flex-wrap justify-content-between align-items-center">
+                            <div className="custom-control custom-checkbox d-block">
+                                {/* <input className="custom-control-input" type="checkbox" id="subscribe_me" checked="" />
+                                <label className="custom-control-label" htmlFor="subscribe_me">Subscribe me to Newsletter</label> */}
+                            </div>
+                            <div className="float-right"></div>
+                            <button className="btn btn-style-1 btn-primary float-right" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </section>
 
     )
 }
