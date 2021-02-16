@@ -29,9 +29,24 @@ export const Settings = () => {
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="form-group">
-                            <label htmlFor="account-phone">Phone Number</label>
+                        {/* <div className="form-group">
+                            <label htmlFor="account-phone">Favourite Team</label>
                             <input className="form-control" type="text" id="account-phone" value="+7 (805) 348 95 72" required="" />
+                        </div> */}
+
+                        <div className="form-group select-team">
+                            <label htmlFor="selectedRound">Favourite Team</label>
+                            <select
+                            className="form-control text-right"
+                            id="selectedRound"
+                            //   onChange={selectedRound}
+                            // value={selectedRound}
+                            >
+                                <option>
+                                    Broncos
+                                </option>
+
+                            </select>
                         </div>
                     </div>
                     <div className="col-md-6">
