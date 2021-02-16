@@ -5,3 +5,8 @@
 #settings {
     padding: 5rem;
 }
+
+.btn-settings {
+    margin: 0 15px;
+    float: right;
+}
