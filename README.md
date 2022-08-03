@@ -14,7 +14,7 @@ A front-end tipping app that connects to a PostgreSQL database. The fixtures are
 or.
 
 1. Sign in with username "brad@gmail.com"
-2. Password "123"
+2. Password "123456"
 
 ## Built With
 
